@@ -7,4 +7,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\Images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.63" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\logo.png" />
+  </ItemGroup>
+
 </Project>

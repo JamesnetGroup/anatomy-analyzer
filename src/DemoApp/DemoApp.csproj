@@ -8,4 +8,17 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.63" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AnatomyAnalyzer\AnatomyAnalyzer.csproj" />
+    <ProjectReference Include="..\DemoApp.Support\DemoApp.Support.csproj" />
+  </ItemGroup>
+
 </Project>

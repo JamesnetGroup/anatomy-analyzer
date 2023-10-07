@@ -1,0 +1,13 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/ExpandButton.xaml"/>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/DetailListItem.xaml"/>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/DetailList.xaml"/>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/ControlTreeItem.xaml"/>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/ControlTreeView.xaml"/>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/AnatomyView.xaml"/>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Views/AnatomyWindow.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
