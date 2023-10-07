@@ -11,20 +11,21 @@ using AnatomyAnalyzer.Local.Models;
 using System.Windows.Shapes;
 using AnatomyAnalyzer.Local.Helpers;
 using AnatomyAnalyzer.UI.Units;
+using AnatomyAnalyzer.UI.Views;
 
 namespace AnatomyAnalyzer.Local.ViewModels
 {
     public partial class AnatomyWindowViewModel : ObservableBase, IViewLoadable
     {
-        private readonly AnatomyService2 _anatomyService;
+        private readonly AnatomyService _anatomyService;
         private readonly IContainerProvider _containerProvider;
         private readonly IRegionManager _regionManager;
 
         public Dictionary<Type, DependencyObject> Instances { get; set; }
 
-        public ObservableCollection<AnatomyItem2> Controls { get; set; }
+        public ObservableCollection<AnatomyItem> Controls { get; set; }
 
-        public AnatomyWindowViewModel(AnatomyService2 anatomyService, IContainerProvider containerProvider, IRegionManager regionManager)
+        public AnatomyWindowViewModel(AnatomyService anatomyService, IContainerProvider containerProvider, IRegionManager regionManager)
         {
             Instances = new();
             Controls = new();
@@ -36,6 +37,7 @@ namespace AnatomyAnalyzer.Local.ViewModels
 
         public void OnLoaded(IViewable view)
         {
+            ImportContent("ContentRegion", "CurrentContent");
         }
 
         private void _anatomyService_AnatomyControlChanged(object sender, AnatomyChangedEventArgs e)
@@ -47,32 +49,34 @@ namespace AnatomyAnalyzer.Local.ViewModels
                     //Control control = (Control)Activator.CreateInstance(item);
                     //Instance.Children.Add(control);
 
-                    AnatomyItem2 anatomyItem = new();
+                    AnatomyItem anatomyItem = new();
                     anatomyItem.Name = item.Name;
                     anatomyItem.Type = item;
-                    anatomyItem.IconType = IconType.ButtonCursor;
+                    anatomyItem.IconType = GetRandomIconType();
                     anatomyItem.Items = new();
                     Controls.Add(anatomyItem);
                 }
             }
         }
 
-        [RelayCommand]
-        private void TreeItemSelected(AnatomyItem2 anatomyItem)
+        public static IconType GetRandomIconType()
         {
-            ImportContent("AnatomyObjectRegion", anatomyItem);
+            var values = Enum.GetValues(typeof(IconType));
+            Random random = new Random();
+            return (IconType)values.GetValue(random.Next(values.Length));
         }
 
-        private void ImportContent(string regionName, AnatomyItem2 item)
+        [RelayCommand]
+        private void TreeItemSelected(AnatomyItem anatomyItem)
+        {
+            //ImportContent("AnatomyObjectRegion", anatomyItem);
+            _anatomyService.SelectControl(anatomyItem);
+        }
+
+        private void ImportContent(string regionName, string contentName)
         {
             IRegion region = _regionManager.Regions[regionName];
-            DependencyObject content = GetControl(item);
-
-            if (content is ContentControl contentControl)
-            {
-                item.Instance = contentControl.Content as DependencyObject;
-
-            }
+            IViewable content = _containerProvider.Resolve<IViewable>(contentName);
 
             if (!region.Views.Contains(content))
             {
@@ -81,12 +85,12 @@ namespace AnatomyAnalyzer.Local.ViewModels
             region.Activate(content);
         }
 
-        private DependencyObject GetControl(AnatomyItem2 item)
+        private DependencyObject GetControl(AnatomyItem item)
         {
             if (!Instances.ContainsKey(item.Type))
             {
                 Control control = (Control)Activator.CreateInstance(item.Type);
-                AnatomyView preview = new();
+                CurrentContent preview = new();
                 preview.Loaded += Preview_Loaded;
                 preview.Content = control;
                 preview.DataContext = item;
@@ -97,7 +101,7 @@ namespace AnatomyAnalyzer.Local.ViewModels
 
         private void Preview_Loaded(object sender, RoutedEventArgs e)
         {
-            if (sender is FrameworkElement fe && fe.DataContext is AnatomyItem2 anatomyItem)
+            if (sender is FrameworkElement fe && fe.DataContext is AnatomyItem anatomyItem)
             {
                 List<DependencyObject> allChildren = new List<DependencyObject>();
                 if (anatomyItem.Instance is DependencyObject instance)
@@ -147,13 +151,13 @@ namespace AnatomyAnalyzer.Local.ViewModels
         }
 
 
-        List<AnatomyItem2> source = new List<AnatomyItem2>();
+        List<AnatomyItem> source = new List<AnatomyItem>();
 
         void AddControl(object obj)
         {
             if (obj is DependencyObject dependencyObject)
             {
-                AnatomyItem2 controlInfo = new AnatomyItem2
+                AnatomyItem controlInfo = new AnatomyItem
                 {
                     Name = obj.GetType().Name,
                     ControlType = obj.GetType(),
@@ -166,13 +170,13 @@ namespace AnatomyAnalyzer.Local.ViewModels
             }
         }
 
-        void AddChildControls(AnatomyItem2 parentControlInfo, DependencyObject parentDependencyObject)
+        void AddChildControls(AnatomyItem parentControlInfo, DependencyObject parentDependencyObject)
         {
             int childrenCount = VisualTreeHelper.GetChildrenCount(parentDependencyObject);
             for (int i = 0; i < childrenCount; i++)
             {
                 var child = VisualTreeHelper.GetChild(parentDependencyObject, i);
-                AnatomyItem2 childControlInfo = new AnatomyItem2
+                AnatomyItem childControlInfo = new AnatomyItem
                 {
                     Name = child.GetType().Name,
                     ControlType = child.GetType(),

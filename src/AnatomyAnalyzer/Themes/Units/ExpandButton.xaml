@@ -4,10 +4,10 @@
     xmlns:james="https://jamesnet.dev/xaml/presentation"
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
     
-    <Style TargetType="{x:Type units:ExpandButton2}">
+    <Style TargetType="{x:Type units:ExpandButton}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type units:ExpandButton2}">
+                <ControlTemplate TargetType="{x:Type units:ExpandButton}">
                     <Border Background="Transparent">
                         <james:JamesIcon x:Name="icon"
                                          Width="16" Height="16"

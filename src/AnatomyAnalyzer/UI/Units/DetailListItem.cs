@@ -3,11 +3,11 @@ using System.Windows.Controls;
 
 namespace AnatomyAnalyzer.UI.Units
 {
-    public class DetailListItem2 : ListBoxItem
+    public class DetailListItem : ListBoxItem
     {
-        static DetailListItem2()
+        static DetailListItem()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(DetailListItem2), new FrameworkPropertyMetadata(typeof(DetailListItem2)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(DetailListItem), new FrameworkPropertyMetadata(typeof(DetailListItem)));
         }
     }
 }

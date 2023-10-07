@@ -3,14 +3,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
 
-    <Style TargetType="{x:Type units:ControlTreeView}">
+    <Style TargetType="{x:Type units:ChildTreeView}">
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Background" Value="#191919"/>
         <Setter Property="Margin" Value="10"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type units:ControlTreeView}">
+                <ControlTemplate TargetType="{x:Type units:ChildTreeView}">
                     <Border Background="{TemplateBinding Background}"
                             CornerRadius="8">
                         <ItemsPresenter/>

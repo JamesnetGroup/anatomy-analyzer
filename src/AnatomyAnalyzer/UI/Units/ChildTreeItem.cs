@@ -3,11 +3,11 @@ using System.Windows.Controls;
 
 namespace AnatomyAnalyzer.UI.Units
 {
-    public class ControlTreeItem : TreeViewItem
+    public class ChildTreeItem : TreeViewItem
     {
-        static ControlTreeItem()
+        static ChildTreeItem()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ControlTreeItem), new FrameworkPropertyMetadata(typeof(ControlTreeItem)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChildTreeItem), new FrameworkPropertyMetadata(typeof(ChildTreeItem)));
         }
 
         protected override DependencyObject GetContainerForItemOverride()

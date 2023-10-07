@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 
 namespace AnatomyAnalyzer.UI.Units
 {
-    public class DetailList2 : ListBox
+    public class DetailList : ListBox
     {
-        static DetailList2()
+        static DetailList()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(DetailList2), new FrameworkPropertyMetadata(typeof(DetailList2)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(DetailList), new FrameworkPropertyMetadata(typeof(DetailList)));
         }
 
         protected override DependencyObject GetContainerForItemOverride()
         {
-            return new DetailListItem2();
+            return new DetailListItem();
         }
     }
 }

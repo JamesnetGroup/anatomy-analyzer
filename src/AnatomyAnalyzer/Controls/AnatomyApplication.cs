@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace AnatomyAnalyzer.Controls
 {
-    public abstract class AnatomyApplication2 : JamesApplication
+    public abstract class AnatomyApplication : JamesApplication
     {
         AnatomyItemCollection _items;
         private AnatomyWindow _window;
@@ -28,7 +28,7 @@ namespace AnatomyAnalyzer.Controls
             _items = new();
             RegisterControls(_items);
 
-            var service = GetService<AnatomyService2>();
+            var service = GetService<AnatomyService>();
 
             service.Add(_items);
         }
@@ -37,8 +37,10 @@ namespace AnatomyAnalyzer.Controls
         {
             base.RegisterTypes(containerRegistry);
 
-            containerRegistry.RegisterSingleton<AnatomyService2>();
+            containerRegistry.RegisterSingleton<AnatomyService>();
+            containerRegistry.RegisterSingleton<IViewable, CurrentContent>("CurrentContent");
             ViewModelLocationProvider.Register<AnatomyWindow, AnatomyWindowViewModel>();
+            ViewModelLocationProvider.Register<CurrentContent, CurrentContentViewModel>();
         }
 
         protected virtual void RegisterControls(AnatomyItemCollection items)

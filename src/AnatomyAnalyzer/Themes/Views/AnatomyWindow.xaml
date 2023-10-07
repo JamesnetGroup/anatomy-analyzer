@@ -8,17 +8,37 @@
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/DarkThemeWindow.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style TargetType="{x:Type ContentControl}" x:Key="Title">
+        <Setter Property="Margin" Value="-10 0 0 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <StackPanel Orientation="Horizontal">
+                        <james:JamesIcon Icon="MicrosoftVisualStudio" Width="16" Height="16"
+                                         Fill="#FFFFFF" Margin="0 0 6 0"/>
+                        <TextBlock Text="Anatomy Analyzer"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style TargetType="{x:Type views:AnatomyWindow}"
            BasedOn="{StaticResource {x:Type james:DarkThemeWindow}}">
         <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="Title" Value="WPF Anatomy Analyzer"/>
+        <Setter Property="Title">
+            <Setter.Value>
+                <ContentControl Style="{StaticResource Title}"/>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Content">
             <Setter.Value>
-                <james:JamesGrid Rows="*" Columns="Auto, *">
-                    <units:ControlTreeView2 ItemsSource="{Binding Controls}"
+                <james:JamesGrid Rows="*" Columns="Auto, *, Auto">
+                    <units:ControlTreeView ItemsSource="{Binding Controls}"
                                            SelectionCommand="{Binding TreeItemSelectedCommand}"/>
-                    <james:JamesRegion RegionName="AnatomyObjectRegion"
+                    <james:JamesRegion RegionName="ContentRegion"
                                        MinWidth="200" MinHeight="100"/>
+                    <units:ChildTreeView ItemsSource="{Binding Childs}"/>
                 </james:JamesGrid>
             </Setter.Value>
         </Setter>

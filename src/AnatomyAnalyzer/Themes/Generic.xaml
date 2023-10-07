@@ -5,9 +5,11 @@
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/ExpandButton.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/DetailListItem.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/DetailList.xaml"/>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/ChildTreeItem.xaml"/>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/ChildTreeView.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/ControlTreeItem.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/ControlTreeView.xaml"/>
-        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/AnatomyView.xaml"/>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Views/CurrentContent.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Views/AnatomyWindow.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

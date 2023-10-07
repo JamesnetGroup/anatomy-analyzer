@@ -3,11 +3,11 @@ using System.Windows.Controls.Primitives;
 
 namespace AnatomyAnalyzer.UI.Units
 {
-    public class ExpandButton2 : ToggleButton
+    public class ExpandButton : ToggleButton
     {
-        static ExpandButton2()
+        static ExpandButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ExpandButton2), new FrameworkPropertyMetadata(typeof(ExpandButton2)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ExpandButton), new FrameworkPropertyMetadata(typeof(ExpandButton)));
         }
     }
 }

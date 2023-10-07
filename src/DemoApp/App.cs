@@ -5,7 +5,7 @@ using System.Windows.Controls;
 
 namespace DemoApp
 {
-    internal class App : AnatomyApplication2
+    internal class App : AnatomyApplication
     {
         protected override void RegisterControls(AnatomyItemCollection items)
         {

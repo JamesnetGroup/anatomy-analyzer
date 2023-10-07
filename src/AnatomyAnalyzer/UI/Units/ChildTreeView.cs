@@ -4,14 +4,14 @@ using System.Windows.Input;
 
 namespace AnatomyAnalyzer.UI.Units
 {
-    internal class ControlTreeView : TreeView
+    internal class ChildTreeView : TreeView
     {
-        static ControlTreeView()
+        static ChildTreeView()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ControlTreeView), new FrameworkPropertyMetadata(typeof(ControlTreeView)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChildTreeView), new FrameworkPropertyMetadata(typeof(ChildTreeView)));
         }
 
-        public static readonly DependencyProperty SelectionCommandProperty = DependencyProperty.Register("SelectionCommand", typeof(ICommand), typeof(ControlTreeView));
+        public static readonly DependencyProperty SelectionCommandProperty = DependencyProperty.Register("SelectionCommand", typeof(ICommand), typeof(ChildTreeView));
 
         public ICommand SelectionCommand
         {
@@ -20,7 +20,7 @@ namespace AnatomyAnalyzer.UI.Units
         }
 
 
-        public ControlTreeView()
+        public ChildTreeView()
         {
             SelectedItemChanged += TreeView_SelectedItemChanged;
         }
@@ -35,7 +35,7 @@ namespace AnatomyAnalyzer.UI.Units
 
         protected override DependencyObject GetContainerForItemOverride()
         {
-            return new ControlTreeItem();
+            return new ChildTreeItem();
         }
     }
 }
