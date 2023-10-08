@@ -1,10 +1,5 @@
 ﻿using AnatomyAnalyzer.Local.Models;
-using Prism.Regions;
-using System.Windows.Controls;
 using System.Windows;
-using AnatomyAnalyzer.UI.Views;
-using System.Windows.Media;
-using System.Windows.Shapes;
 
 namespace AnatomyAnalyzer.Local.Helpers
 {

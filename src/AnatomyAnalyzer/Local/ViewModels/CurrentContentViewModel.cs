@@ -1,6 +1,4 @@
-﻿using CommunityToolkit.Mvvm.Input;
-using Jamesnet.Wpf.Controls;
-using Jamesnet.Wpf.Mvvm;
+﻿using Jamesnet.Wpf.Mvvm;
 using Prism.Ioc;
 using Prism.Regions;
 using System.Collections.ObjectModel;
@@ -10,9 +8,8 @@ using System.Windows;
 using AnatomyAnalyzer.Local.Models;
 using System.Windows.Shapes;
 using AnatomyAnalyzer.Local.Helpers;
-using AnatomyAnalyzer.UI.Units;
-using AnatomyAnalyzer.UI.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
+using System.Windows.Data;
 
 namespace AnatomyAnalyzer.Local.ViewModels
 {
@@ -76,8 +73,14 @@ namespace AnatomyAnalyzer.Local.ViewModels
 
                     Rectangle rect = new Rectangle();
                     rect.VerticalAlignment = VerticalAlignment.Bottom;
-                    rect.Width = element.ActualWidth;
-                    rect.Height = element.ActualHeight;
+                    Binding widthBinding = new Binding("ActualWidth");
+                    widthBinding.Source = element;
+                    rect.SetBinding(Rectangle.WidthProperty, widthBinding);
+
+                    Binding heightBinding = new Binding("ActualHeight");
+                    heightBinding.Source = element;
+                    rect.SetBinding(Rectangle.HeightProperty, heightBinding);
+
                     rect.Fill = brush;
 
                     var item = new DetailInfo();

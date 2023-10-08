@@ -1,6 +1,5 @@
 ﻿using Jamesnet.Wpf.Controls;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace AnatomyAnalyzer.UI.Views
 {
