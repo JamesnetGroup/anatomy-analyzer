@@ -6,10 +6,8 @@
     <Geometry x:Key="ArrowGeometry">
         M1,1 L155.86254,1 177.86254,23.999998 155.86254,46.999998 1,46.999998 1.069199,46.879649 C4.7638744,40.078371 6.8625396,32.28427 6.8625406,23.999998 6.8625396,15.715727 4.7638744,7.9216255 1.069199,1.1203489 z
     </Geometry>
-    
-    <BitmapImage x:Key="LeagueOfLegends">
-        /DemoApp.Support;component/Resources/Images/logo.png
-    </BitmapImage>
+
+    <BitmapImage x:Key="LeagueOfLegends" UriSource="/DemoApp.Support;component/Resources/Images/logo.png"/>
 
     <SolidColorBrush x:Key="GeometryFill" Color="#1E2328"/>
 

@@ -5,28 +5,31 @@
     xmlns:cnvts="clr-namespace:AnatomyAnalyzer.Local.Converters"
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
 
-    <Style TargetType="{x:Type units:ControlTreeItem}">
+    <Style TargetType="{x:Type units:ChildTreeItem}">
+        <Setter Property="MinWidth" Value="200"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="IsExpanded" Value="{Binding IsFolderExpanded, Mode=TwoWay}"/>
-        <Setter Property="IsSelected" Value="{Binding IsFolderSelected}"/>
+        <Setter Property="IsExpanded" Value="True"/>
         <Setter Property="ItemsSource" Value="{Binding Children}"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="UseLayoutRounding" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type units:ControlTreeItem}">
+                <ControlTemplate TargetType="{x:Type units:ChildTreeItem}">
                     <james:JamesGrid Rows="Auto, Auto" Columns="*">
                         <Border x:Name="item"
-                                CornerRadius="8"
+                                CornerRadius="0"
                                 Background="{TemplateBinding Background}"
+                                BorderThickness="0 0 0 0"
+                                BorderBrush="#252525"
                                 Padding="{Binding Depth, Converter={cnvts:DepthConverter}}">
-                            <james:JamesGrid Rows="*" Columns="Auto, Auto, *">
+                            <james:JamesGrid Rows="*" Columns="Auto, Auto, *, Auto">
                                 <units:ExpandButton x:Name="expand"
-                                                     Foreground="{TemplateBinding Foreground}"
-                                                     IsChecked="{Binding IsFolderExpanded, Mode=OneWay}"
-                                                     Visibility="Collapsed"/>
+                                                     Foreground="#44FFFFFF"
+                                                     IsChecked="{Binding RelativeSource={RelativeSource AncestorType=units:ChildTreeItem}, Path=IsExpanded}"
+                                                     Visibility="Visible"/>
                                 <james:JamesIcon x:Name="icon"
+                                                 Visibility="Collapsed"
                                                  Icon="{Binding IconType}"
                                                  Width="16" Height="16"
                                                  Margin="10 2 10 2"
@@ -37,11 +40,22 @@
                                            Margin="0 6 30 6"
                                            TextTrimming="CharacterEllipsis"
                                            VerticalAlignment="Center"/>
+                                <TextBlock x:Name="depth"
+                                           HorizontalAlignment="Right"
+                                           VerticalAlignment="Center"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           Text="{Binding Depth}"
+                                           Margin="0 6 10 6"
+                                           TextTrimming="CharacterEllipsis"/>
                             </james:JamesGrid>
                         </Border>
                         <ItemsPresenter x:Name="items" Grid.Row="1" Visibility="Collapsed"/>
                     </james:JamesGrid>
                     <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Children.Count}" Value="0">
+                            <Setter TargetName="expand" Property="Visibility" Value="Hidden"/>
+                            <Setter Property="Foreground" Value="#66FFFFFF"/>
+                        </DataTrigger>
                         <DataTrigger Binding="{Binding IconType}" Value="Folder">
                             <Setter TargetName="icon" Property="Fill" Value="#FFEFB13A"/>
                         </DataTrigger>
@@ -52,14 +66,10 @@
                         <Trigger Property="IsExpanded" Value="True">
                             <Setter TargetName="items" Property="Visibility" Value="Visible"/>
                         </Trigger>
-                        <DataTrigger Binding="{Binding ElementName=expand, Path=IsChecked}" Value="True">
-                            <Setter TargetName="items" Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding ElementName=expand, Path=IsChecked}" Value="False">
-                            <Setter TargetName="items" Property="Visibility" Value="Collapsed"/>
-                        </DataTrigger>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#FFE26285"/>
+                            <Setter Property="Background" Value="#EFB13A"/>
+                            <Setter Property="Foreground" Value="#000000"/>
+                            <Setter Property="Foreground" TargetName="expand" Value="#000000"/>
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>

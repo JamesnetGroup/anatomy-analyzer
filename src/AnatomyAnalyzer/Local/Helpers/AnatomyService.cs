@@ -10,37 +10,31 @@ namespace AnatomyAnalyzer.Local.Helpers
 {
     public class AnatomyService
     {
-        public event EventHandler<AnatomyChangedEventArgs> ControlSelected;
+        public event EventHandler<AnatomyEventArgs> ControlSelected;
+        public event EventHandler<AnatomyEventArgs> ControlLoaded;
 
-        public event EventHandler<AnatomyChangedEventArgs> AnatomyControlChanged;
+        public event EventHandler<AnatomyEventArgs> ControlChanged;
         public Dictionary<Type, DependencyObject> Instances { get; set; }
 
         internal void Add(AnatomyItemCollection items)
         {
-            var args = new AnatomyChangedEventArgs();
+            var args = new AnatomyEventArgs();
             args.Controls = items;
-            AnatomyControlChanged.Invoke(this, args);
+            ControlChanged.Invoke(this, args);
         }
 
         internal void SelectControl(AnatomyItem item)
         {
-            AnatomyChangedEventArgs args = new();
+            AnatomyEventArgs args = new();
             args.Item = item;
             ControlSelected.Invoke(this, args);
-            //IRegion region = _regionManager.Regions[regionName];
-            //DependencyObject content = GetControl(item);
+        }
 
-            //if (content is ContentControl contentControl)
-            //{
-            //    item.Instance = contentControl.Content as DependencyObject;
-
-            //}
-
-            //if (!region.Views.Contains(content))
-            //{
-            //    region.Add(content);
-            //}
-            //region.Activate(content);
+        internal void LoadControl(AnatomyItem item)
+        {
+            AnatomyEventArgs args = new();
+            args.Item = item;
+            ControlLoaded.Invoke(this, args);
         }
     }
 }

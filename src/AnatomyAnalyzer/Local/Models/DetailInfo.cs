@@ -2,7 +2,7 @@
 
 namespace AnatomyAnalyzer.Local.Models
 {
-    public class DetailInfo2
+    public class DetailInfo
     {
         public string Name { get; set; }
         public object Content { get; set; }

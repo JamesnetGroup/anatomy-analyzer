@@ -18,10 +18,10 @@
                 <ControlTemplate TargetType="{x:Type units:ControlTreeItem}">
                     <james:JamesGrid Rows="Auto, Auto" Columns="*">
                         <Border x:Name="item"
-                                CornerRadius="8"
+                                CornerRadius="0"
                                 Background="{TemplateBinding Background}"
                                 Padding="{Binding Depth, Converter={cnvts:DepthConverter}}">
-                            <james:JamesGrid Rows="*" Columns="Auto, Auto, *">
+                            <james:JamesGrid Rows="*" Columns="Auto, Auto, *, Auto">
                                 <units:ExpandButton x:Name="expand"
                                                      Foreground="{TemplateBinding Foreground}"
                                                      IsChecked="{Binding IsFolderExpanded, Mode=OneWay}"
@@ -37,14 +37,17 @@
                                            Margin="0 6 30 6"
                                            TextTrimming="CharacterEllipsis"
                                            VerticalAlignment="Center"/>
+                                <james:JamesIcon x:Name="chevron" 
+                                                 Icon="ChevronRight"
+                                                 Width="16" Height="16"
+                                                 Margin="10 2 10 2"
+                                                 HorizontalAlignment="Right"
+                                                 Fill="#11FFFFFF"/>
                             </james:JamesGrid>
                         </Border>
                         <ItemsPresenter x:Name="items" Grid.Row="1" Visibility="Collapsed"/>
                     </james:JamesGrid>
                     <ControlTemplate.Triggers>
-                        <DataTrigger Binding="{Binding IconType}" Value="Folder">
-                            <Setter TargetName="icon" Property="Fill" Value="#FFEFB13A"/>
-                        </DataTrigger>
                         <DataTrigger Binding="{Binding IsDenied}" Value="True">
                             <Setter TargetName="icon" Property="Opacity" Value="0.3"/>
                             <Setter TargetName="text" Property="Opacity" Value="0.3"/>
@@ -59,7 +62,9 @@
                             <Setter TargetName="items" Property="Visibility" Value="Collapsed"/>
                         </DataTrigger>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#FFE26285"/>
+                            <Setter Property="Background" Value="#EFB13A"/>
+                            <Setter Property="Foreground" Value="#000000"/>
+                            <Setter Property="Fill" TargetName="chevron" Value="#000000"/>
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
