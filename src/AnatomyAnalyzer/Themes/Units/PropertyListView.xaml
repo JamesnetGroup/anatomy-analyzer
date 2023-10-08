@@ -5,7 +5,7 @@
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
 
     <Style TargetType="{x:Type units:PropertyListView}">
-        <Setter Property="Margin" Value="0 10 0 0"/>
+        <Setter Property="Margin" Value="0 10 10 0"/>
         <Setter Property="Background" Value="#191919"/>
         <Setter Property="Template">
             <Setter.Value>
