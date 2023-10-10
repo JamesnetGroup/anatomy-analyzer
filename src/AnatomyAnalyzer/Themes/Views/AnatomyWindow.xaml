@@ -9,6 +9,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type ContentControl}" x:Key="Title">
+        <Setter Property="FontFamily" Value="{DynamicResource Basic.Font}"/>
         <Setter Property="FontFamily" Value="Roboto"/>
         <Setter Property="Margin" Value="0 0 0 0"/>
         <Setter Property="Template">
@@ -16,8 +17,8 @@
                 <ControlTemplate TargetType="{x:Type ContentControl}">
                     <StackPanel Orientation="Horizontal">
                         <james:JamesIcon Icon="Palette" Width="16" Height="16"
-                                         Fill="#FFFFFF" Margin="0 0 6 0"/>
-                        <TextBlock Text="Anatomy Analyzer"/>
+                                         Fill="{DynamicResource Basic.Foreground}" Margin="0 0 6 0"/>
+                        <TextBlock Text="{DynamicResource ApplicationTitle}"/>
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>
@@ -26,7 +27,9 @@
 
     <Style TargetType="{x:Type views:AnatomyWindow}"
            BasedOn="{StaticResource {x:Type james:DarkThemeWindow}}">
-        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Foreground" Value="{DynamicResource Basic.Foreground}"/>
+        <Setter Property="Background" Value="{DynamicResource Basic.Background}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource Basic.Font}"/>
         <Setter Property="Title">
             <Setter.Value>
                 <ContentControl Style="{StaticResource Title}"/>

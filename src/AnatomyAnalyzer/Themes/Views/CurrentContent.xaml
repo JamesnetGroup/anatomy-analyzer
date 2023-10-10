@@ -6,14 +6,21 @@
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
 
     <Style TargetType="{x:Type views:CurrentContent}">
+        <Setter Property="Background" Value="#191919"/>
         <Setter Property="Content" Value="{Binding Current.Instance}"/>
         <Setter Property="Margin" Value="0 10 10 10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type views:CurrentContent}">
-                    <james:JamesGrid Rows="*, Auto" Columns="*">
+                    <james:JamesGrid Rows="Auto, *, Auto" Columns="*"
+                                     Background="{TemplateBinding Background}">
+                        <TextBlock Text="Instance preview"
+                                       FontSize="14"
+                                       FontFamily="Roboto"
+                                       FontWeight="SemiBold"
+                                       Padding="10"/>
                         <Border x:Name="item"
-                                BorderThickness="2"
+                                BorderThickness="0"
                                 BorderBrush="#EFB13A"
                                 Background="{TemplateBinding Background}">
                             <james:JamesGrid Rows="Auto,*" Columns="*"
@@ -21,10 +28,11 @@
                                 <Label x:Name="text"
                                        Background="#EFB13A"
                                        Foreground="#000000"
-                                       FontWeight="Bold"
+                                       
+                                       FontFamily="Roboto"
                                        Content="{Binding Current.Name}"
-                                       Padding="20 4 20 4"
-                                       HorizontalAlignment="Left"
+                                       Padding="20 7 20 7"
+                                       HorizontalAlignment="Stretch"
                                        VerticalAlignment="Center"/>
                                 <ContentPresenter Margin="20" 
                                                   MinWidth="20"

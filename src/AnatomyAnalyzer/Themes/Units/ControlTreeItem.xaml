@@ -6,11 +6,12 @@
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
 
     <Style TargetType="{x:Type units:ControlTreeItem}">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="FontFamily" Value="{DynamicResource Basic.Font}"/>
         <Setter Property="IsExpanded" Value="{Binding IsFolderExpanded, Mode=TwoWay}"/>
         <Setter Property="IsSelected" Value="{Binding IsFolderSelected}"/>
         <Setter Property="ItemsSource" Value="{Binding Children}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ControlTree.Foreground}"/>
+        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="UseLayoutRounding" Value="True"/>
         <Setter Property="Template">
@@ -42,16 +43,12 @@
                                                  Width="16" Height="16"
                                                  Margin="10 2 10 2"
                                                  HorizontalAlignment="Right"
-                                                 Fill="#11FFFFFF"/>
+                                                 Fill="{DynamicResource ControlTree.Fill}"/>
                             </james:JamesGrid>
                         </Border>
                         <ItemsPresenter x:Name="items" Grid.Row="1" Visibility="Collapsed"/>
                     </james:JamesGrid>
                     <ControlTemplate.Triggers>
-                        <DataTrigger Binding="{Binding IsDenied}" Value="True">
-                            <Setter TargetName="icon" Property="Opacity" Value="0.3"/>
-                            <Setter TargetName="text" Property="Opacity" Value="0.3"/>
-                        </DataTrigger>
                         <Trigger Property="IsExpanded" Value="True">
                             <Setter TargetName="items" Property="Visibility" Value="Visible"/>
                         </Trigger>
@@ -62,9 +59,9 @@
                             <Setter TargetName="items" Property="Visibility" Value="Collapsed"/>
                         </DataTrigger>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#EFB13A"/>
-                            <Setter Property="Foreground" Value="#000000"/>
-                            <Setter Property="Fill" TargetName="chevron" Value="#000000"/>
+                            <Setter Property="Background" Value="{DynamicResource ControlTree.Background.IsSelected}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource ControlTree.Foreground.IsSelected}"/>
+                            <Setter Property="Fill" TargetName="chevron" Value="{DynamicResource ControlTree.Foreground.IsSelected}"/>
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>

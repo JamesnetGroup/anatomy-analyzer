@@ -1,11 +1,15 @@
-﻿namespace DemoApp
+﻿using DemoApp.Properties;
+
+namespace DemoApp
 {
     internal class Starter
     {
         [STAThread]
         private static void Main(string[] args)
         {
-            _ = new App().Run();
+            _ = new App()
+                .InitializeTheme<ResourceSettings>()
+                .Run();
         }
     }
 }

@@ -9,11 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.63" />
+    <None Remove="Resources\Language.yml" />
+    <None Remove="Resources\Theme.yml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <EmbeddedResource Include="Resources\Language.yml" />
+    <EmbeddedResource Include="Resources\Theme.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.63" />
   </ItemGroup>
 
   <ItemGroup>

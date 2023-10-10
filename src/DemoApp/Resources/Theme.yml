@@ -1,0 +1,34 @@
+﻿fonts:
+  - key: Basic.Font
+    fonts:
+      black: "Roboto"
+      light: "Roboto"
+themes:
+  - key: Basic.Foreground
+    colors:
+      black: "#FFFFFF"
+      light: "#000000"
+  - key: Basic.Background
+    colors:
+      black: "#252525"
+      light: "#FFFFFF"
+  - key: ControlTree.Foreground
+    colors:
+      black: "#FFFFFF"
+      light: "#000000"
+  - key: ControlTree.Fill
+    colors:
+      black: "#11FFFFFF"
+      light: "#11FFFFFF"
+  - key: ControlTree.Foreground.IsSelected
+    colors:
+      black: "#000000"
+      light: "#000000"
+  - key: ControlTree.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key: ControlTree.Background.IsSelected
+    colors:
+      black: "#EFB13A"
+      light: "#EFB13A"

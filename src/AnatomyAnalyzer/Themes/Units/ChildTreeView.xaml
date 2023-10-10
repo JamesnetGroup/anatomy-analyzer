@@ -1,6 +1,7 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:james="https://jamesnet.dev/xaml/presentation"
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
 
     <Style TargetType="{x:Type units:ChildTreeView}">
@@ -13,7 +14,14 @@
                 <ControlTemplate TargetType="{x:Type units:ChildTreeView}">
                     <Border Background="{TemplateBinding Background}"
                             CornerRadius="0">
-                        <ItemsPresenter/>
+                        <james:JamesGrid Rows="Auto, *" Columns="*">
+                            <TextBlock Text="Hierarchy layer"
+                                       FontSize="14"
+                                       FontFamily="Roboto"
+                                       FontWeight="SemiBold"
+                                       Padding="10"/>
+                            <ItemsPresenter/>
+                        </james:JamesGrid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
