@@ -6,7 +6,7 @@
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
 
     <Style TargetType="{x:Type units:PropertyListItem}">
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background" Value="{DynamicResource PropListItem.Background}"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="10"/>
@@ -15,18 +15,18 @@
                 <ControlTemplate TargetType="{x:Type units:PropertyListItem}">
                     <Border Background="{TemplateBinding Background}"
                             BorderThickness="0 0 0 0.59"
-                            BorderBrush="#444444">
+                            BorderBrush="{DynamicResource PropListItem.BorderBrush}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="150" SharedSizeGroup="Name"/>
                                 <ColumnDefinition Width="*" MinWidth="150"/>
                             </Grid.ColumnDefinitions>
-                            <Label Background="#EFB13A"
+                            <Label Background="{DynamicResource PropListItem.Label.Background}"
                                    FontFamily="Roboto"
                                    FontWeight="SemiBold"
                                    Foreground="#000000"
                                    BorderThickness="0 0 0.59 0"
-                                   BorderBrush="#444444"
+                                   BorderBrush="{DynamicResource PropListItem.BorderBrush}"
                                    Padding="8 5 8 5">
                                 <TextBlock Text="{Binding Name}"
                                            ToolTip="{Binding Name}"
@@ -35,8 +35,8 @@
                             <TextBox Grid.Column="1" 
                                      MinWidth="150"
                                      Text="{Binding Value}"
-                                     Background="#191919"
-                                     Foreground="#FFFFFF"
+                                     Background="Transparent"
+                                     Foreground="{DynamicResource PropListItem.Foreground}"
                                      VerticalContentAlignment="Center"
                                      Padding="8 0 8 0"
                                      BorderThickness="0 0 0 0"/>

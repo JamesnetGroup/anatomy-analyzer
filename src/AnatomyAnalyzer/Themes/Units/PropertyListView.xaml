@@ -7,13 +7,13 @@
 
     <Style TargetType="{x:Type units:PropertyListView}">
         <Setter Property="Margin" Value="0 10 10 0"/>
-        <Setter Property="Background" Value="#191919"/>
+        <Setter Property="Background" Value="{DynamicResource PropList.Background}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type units:PropertyListView}">
                     <james:JamesGrid Rows="Auto, *" Columns="*"
                                      Background="{TemplateBinding Background}">
-                        <TextBlock Text="Properties"
+                        <TextBlock Text="{DynamicResource Properties}"
                                        FontSize="14"
                                        FontFamily="Roboto"
                                        FontWeight="SemiBold"

@@ -14,7 +14,7 @@
                 <ControlTemplate TargetType="{x:Type views:CurrentContent}">
                     <james:JamesGrid Rows="Auto, *, Auto" Columns="*"
                                      Background="{TemplateBinding Background}">
-                        <TextBlock Text="Instance preview"
+                        <TextBlock Text="{DynamicResource InstancePreview}"
                                        FontSize="14"
                                        FontFamily="Roboto"
                                        FontWeight="SemiBold"

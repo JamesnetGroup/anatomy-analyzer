@@ -16,7 +16,7 @@ namespace DemoApp.Properties
 
         protected override string GetDefaultTheme()
         {
-            return "Black";
+            return "Light";
         }
 
         protected override string GetLanguageResource()

@@ -12,7 +12,7 @@
                 <ControlTemplate TargetType="{x:Type units:DetailListItem}">
                     <Border BorderThickness="1"
                             Margin="-1 -1 0 0"
-                            BorderBrush="#EFB13A"
+                            BorderBrush="{DynamicResource DatailListItem.BorderBrush}"
                             Height="{Binding RelativeSource={RelativeSource Self}, Path=ActualWidth}">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -20,8 +20,8 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Label x:Name="text"
-                                   Background="#EFB13A"
-                                   Foreground="#000000"
+                                   Background="{DynamicResource DatailListItem.Background}"
+                                   Foreground="{DynamicResource DatailListItem.Foreground}"
                                    FontWeight="Bold"
                                    Content="{Binding Name}"
                                    Padding="20 4 20 4"

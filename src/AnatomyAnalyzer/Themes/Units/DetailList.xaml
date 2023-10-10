@@ -6,13 +6,13 @@
 
     <Style TargetType="{x:Type units:DetailList}">
         <Setter Property="Margin" Value="0 10 0 0"/>
-        <Setter Property="Background" Value="#191919"/>
+        <Setter Property="Background" Value="{DynamicResource DatailList.Background}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type units:DetailList}">
                     <Border Background="{TemplateBinding Background}"
                             BorderThickness="1"
-                            BorderBrush="#EFB13A">
+                            BorderBrush="{DynamicResource DatailList.BorderBrush}">
                         <ItemsPresenter/>
                     </Border>
                 </ControlTemplate>

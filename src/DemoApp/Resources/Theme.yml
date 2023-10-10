@@ -32,3 +32,43 @@ themes:
     colors:
       black: "#EFB13A"
       light: "#EFB13A"
+  - key: ChildTree.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key: DatailList.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key: PropList.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key: DatailListItem.BorderBrush
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key: DatailListItem.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key:  DatailListItem.Foreground
+    colors:
+      black: "#000000"
+      light: "#EEEEEE"
+  - key:  PropListItem.BorderBrush
+    colors:
+      black: "#444444"
+      light: "#444444"
+  - key:  PropListItem.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key:  PropListItem.Label.Background
+    colors:
+      black: "#EFB13A"
+      light: "#EFB13A"
+  - key:  PropListItem.Foreground
+    colors:
+      black: "#FFFFFF"
+      light: "#000000"
