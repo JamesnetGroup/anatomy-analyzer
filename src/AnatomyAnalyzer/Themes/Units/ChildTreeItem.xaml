@@ -8,7 +8,7 @@
     <Style TargetType="{x:Type units:ChildTreeItem}">
         <Setter Property="MinWidth" Value="200"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Foreground" Value="{DynamicResource ChildTree.Foreground}"/>
         <Setter Property="IsExpanded" Value="True"/>
         <Setter Property="ItemsSource" Value="{Binding Children}"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -18,10 +18,7 @@
                 <ControlTemplate TargetType="{x:Type units:ChildTreeItem}">
                     <james:JamesGrid Rows="Auto, Auto" Columns="*">
                         <Border x:Name="item"
-                                CornerRadius="0"
                                 Background="{TemplateBinding Background}"
-                                BorderThickness="0 0 0 0"
-                                BorderBrush="#252525"
                                 Padding="{Binding Depth, Converter={cnvts:DepthConverter}}">
                             <james:JamesGrid Rows="*" Columns="Auto, Auto, *, Auto">
                                 <units:ExpandButton x:Name="expand"
@@ -54,7 +51,7 @@
                     <ControlTemplate.Triggers>
                         <DataTrigger Binding="{Binding Children.Count}" Value="0">
                             <Setter TargetName="expand" Property="Visibility" Value="Hidden"/>
-                            <Setter Property="Foreground" Value="#66FFFFFF"/>
+                            <Setter Property="Foreground" Value="{DynamicResource ChildTree.Foreground.IsEmpty}"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding IconType}" Value="Folder">
                             <Setter TargetName="icon" Property="Fill" Value="#FFEFB13A"/>

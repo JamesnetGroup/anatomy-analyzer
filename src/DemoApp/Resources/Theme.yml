@@ -32,7 +32,23 @@ themes:
     colors:
       black: "#EFB13A"
       light: "#EFB13A"
+  - key: ChildTree.Foreground
+    colors:
+      black: "#FFFFFF"
+      light: "#000000"
+  - key: ChildTree.Foreground.IsEmpty
+    colors:
+      black: "#66FFFFFF"
+      light: "#AA000000"
   - key: ChildTree.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key:  Content.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key:  Content.Behind.Background
     colors:
       black: "#191919"
       light: "#EEEEEE"
@@ -40,14 +56,18 @@ themes:
     colors:
       black: "#191919"
       light: "#EEEEEE"
-  - key: PropList.Background
+  - key: DatailList.BorderBrush
     colors:
-      black: "#191919"
-      light: "#EEEEEE"
+      black: "#EFB13A"
+      light: "#EFB13A"
+  - key: DatailListItem.Header.Background
+    colors:
+      black: "#EFB13A"
+      light: "#EFB13A"
   - key: DatailListItem.BorderBrush
     colors:
-      black: "#191919"
-      light: "#EEEEEE"
+      black: "#EFB13A"
+      light: "#EFB13A"
   - key: DatailListItem.Background
     colors:
       black: "#191919"
@@ -55,6 +75,10 @@ themes:
   - key:  DatailListItem.Foreground
     colors:
       black: "#000000"
+      light: "#000000"
+  - key: PropList.Background
+    colors:
+      black: "#191919"
       light: "#EEEEEE"
   - key:  PropListItem.BorderBrush
     colors:

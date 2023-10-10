@@ -5,9 +5,10 @@
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
 
     <Style TargetType="{x:Type units:ChildTreeView}">
+        <Setter Property="Background" Value="{DynamicResource ChildTree.Background}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource Basic.Fonts}"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="{DynamicResource ChildTree.Background}"/>
         <Setter Property="Margin" Value="0 10 10 10"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -17,7 +18,7 @@
                         <james:JamesGrid Rows="Auto, *" Columns="*">
                             <TextBlock Text="{DynamicResource HierarchyLayer}"
                                        FontSize="14"
-                                       FontFamily="Roboto"
+                                       FontFamily="{TemplateBinding FontFamily}"
                                        FontWeight="SemiBold"
                                        Padding="10"/>
                             <ItemsPresenter/>

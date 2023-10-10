@@ -10,7 +10,6 @@
 
     <Style TargetType="{x:Type ContentControl}" x:Key="Title">
         <Setter Property="FontFamily" Value="{DynamicResource Basic.Font}"/>
-        <Setter Property="FontFamily" Value="Roboto"/>
         <Setter Property="Margin" Value="0 0 0 0"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -44,16 +43,6 @@
                                          SelectionCommand="{Binding ChildSelectionCommand}"/>
                     <james:JamesRegion RegionName="ContentRegion"
                                        MinWidth="200" MinHeight="100"/>
-                    <TextBox Text="{Binding TemplateXaml}"
-                             Visibility="Collapsed"
-                             FontSize="15"
-                             FontFamily="Roboto"
-                             Margin="0 10 10 10"
-                             Padding="10"
-                             Foreground="#FFFFFF"
-                             Background="#151515"
-                             BorderThickness="0"
-                             AcceptsReturn="True"/>
                     <units:PropertyListView ItemsSource="{Binding Properties}" Margin="0 10 10 20"/>
                 </james:JamesGrid>
             </Setter.Value>

@@ -20,7 +20,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Label x:Name="text"
-                                   Background="{DynamicResource DatailListItem.Background}"
+                                   Background="{DynamicResource DatailListItem.Header.Background}"
                                    Foreground="{DynamicResource DatailListItem.Foreground}"
                                    FontWeight="Bold"
                                    Content="{Binding Name}"

@@ -6,9 +6,9 @@
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
 
     <Style TargetType="{x:Type views:CurrentContent}">
-        <Setter Property="Background" Value="#191919"/>
+        <Setter Property="Background" Value="{DynamicResource Content.Background}"/>
         <Setter Property="Content" Value="{Binding Current.Instance}"/>
-        <Setter Property="Margin" Value="0 10 10 10"/>
+        <Setter Property="Margin" Value="0 10 10 20"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type views:CurrentContent}">
@@ -24,7 +24,7 @@
                                 BorderBrush="#EFB13A"
                                 Background="{TemplateBinding Background}">
                             <james:JamesGrid Rows="Auto,*" Columns="*"
-                                             Background="#191919">
+                                             Background="{DynamicResource Content.Behind.Background}">
                                 <Label x:Name="text"
                                        Background="#EFB13A"
                                        Foreground="#000000"
@@ -42,7 +42,7 @@
                             </james:JamesGrid>
                         </Border>
                         <units:DetailList ItemsSource="{Binding Current.Items}"
-                                          Margin="0 0 0 10"/>
+                                          Margin="0 0 0 0"/>
                     </james:JamesGrid>
                 </ControlTemplate>
             </Setter.Value>
