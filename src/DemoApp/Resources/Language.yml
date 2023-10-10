@@ -15,3 +15,11 @@
       jpn: コントロール
       vnm: Điều khiển
       esp: Controla
+  - key: HierarchyLayer
+    items:
+      usa: Hierarchy layer
+      kor: 계층 구조 레이어
+      chn: 层次结构层
+      jpn: 階層レイヤー
+      vnm: Cấp độ phân cấp
+      esp: Nivel jerárquico

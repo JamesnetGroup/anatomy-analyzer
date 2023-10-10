@@ -15,7 +15,7 @@
                     <Border Background="{TemplateBinding Background}"
                             CornerRadius="0">
                         <james:JamesGrid Rows="Auto, *" Columns="*">
-                            <TextBlock Text="Hierarchy layer"
+                            <TextBlock Text="{DynamicResource HierarchyLayer}"
                                        FontSize="14"
                                        FontFamily="Roboto"
                                        FontWeight="SemiBold"
