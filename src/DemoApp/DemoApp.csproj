@@ -19,7 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.76" />
+=======
+    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.70" />
+>>>>>>> b9c0785e00409f1723a8d3bae76c3210229dabe8
   </ItemGroup>
 
   <ItemGroup>
