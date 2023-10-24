@@ -49,7 +49,10 @@ namespace AnatomyAnalyzer.Local.ViewModels
                 {
                     item.Instance = (Control)Activator.CreateInstance(item.Type);
                 }
-                item.Instance.Loaded += Control_Loaded;
+                if (item.Instance is FrameworkElement fe)
+                { 
+                    fe.Loaded += Control_Loaded;
+                }
                 Instances.Add(item, item);
             }
             return Instances[item];

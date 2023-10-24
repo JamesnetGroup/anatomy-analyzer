@@ -12,7 +12,7 @@ namespace AnatomyAnalyzer.Local.Models
         public IconType IconType { get; internal set; }
         public Type Type { get; internal set; }
         public Type ControlType { get; internal set; }
-        public FrameworkElement Instance { get; internal set; }
+        public DependencyObject Instance { get; internal set; }
         public ObservableCollection<AnatomyItem> Children { get; internal set; }
         public ObservableCollection<DetailInfo> Items { get; set; }
         public Control Content { get; internal set; }

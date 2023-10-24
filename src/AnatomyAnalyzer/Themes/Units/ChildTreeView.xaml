@@ -7,6 +7,7 @@
     <Style TargetType="{x:Type units:ChildTreeView}">
         <Setter Property="Background" Value="{DynamicResource ChildTree.Background}"/>
         <Setter Property="FontFamily" Value="{DynamicResource Basic.Fonts}"/>
+        <Setter Property="Background" Value="#191919"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Margin" Value="0"/>
@@ -15,15 +16,10 @@
                 <ControlTemplate TargetType="{x:Type units:ChildTreeView}">
                     <Border Background="{TemplateBinding Background}"
                             CornerRadius="0">
-                        <james:JamesGrid Rows="Auto, *" Columns="*">
-                            <TextBlock Text="{DynamicResource HierarchyLayer}"
-                                       FontSize="14"
-                                       FontFamily="{TemplateBinding FontFamily}"
-                                       FontWeight="SemiBold"
-                                       Visibility="Collapsed"
-                                       Padding="10"/>
+                        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                      CanContentScroll="False">
                             <ItemsPresenter/>
-                        </james:JamesGrid>
+                        </ScrollViewer>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

@@ -5,24 +5,19 @@
     xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
 
     <Style TargetType="{x:Type units:ControlTreeView}">
-        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="{DynamicResource ControlTree.Background}"/>
+        <Setter Property="Background" Value="#191919"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type units:ControlTreeView}">
                     <Border Background="{TemplateBinding Background}"
                             CornerRadius="0">
-                        <james:JamesGrid Rows="Auto, *" Columns="*">
-                            <TextBlock Text="{DynamicResource Controls}"
-                                       FontSize="14"
-                                       FontFamily="Roboto"
-                                       FontWeight="SemiBold"
-                                       Visibility="Collapsed"
-                                       Padding="10"/>
+                        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                      CanContentScroll="False">
                             <ItemsPresenter/>
-                        </james:JamesGrid>
+                        </ScrollViewer>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

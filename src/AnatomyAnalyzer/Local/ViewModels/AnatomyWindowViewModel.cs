@@ -98,7 +98,7 @@ namespace AnatomyAnalyzer.Local.ViewModels
                 {
                     Name = child.GetType().Name,
                     Type = child.GetType(),
-                    Instance = (FrameworkElement)child,
+                    Instance = (DependencyObject)child,
                     Depth = currentDepth
                 };
 
@@ -138,7 +138,7 @@ namespace AnatomyAnalyzer.Local.ViewModels
                         Type = item.GetType(),
                         IconType = GetRandomIconType(),
                         Items = new(),
-                        Instance = (FrameworkElement)item,
+                        Instance = (DependencyObject)item,
                         IsFolderExpanded = true
                     };
                     Controls.Add(anatomyItem);

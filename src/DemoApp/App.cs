@@ -4,6 +4,7 @@ using DemoApp.Extensions;
 using DemoApp.Support.UI.Units;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using XamlDesign.Wpf.UI.Units;
 
 namespace DemoApp
 {
@@ -11,7 +12,17 @@ namespace DemoApp
     {
         protected override void RegisterControls(AnatomyItemCollection items)
         {
+            RangeSlider rangeSlider = new();
+            rangeSlider.LeftValue = 20;
+            rangeSlider.RightValue= 60;
+            rangeSlider.Maximum = 100;
+            rangeSlider.Width = 200;
+
             items.Add<PlayButton>();
+            items.Add(new ToggleSwitch().InitSampleData(Theme.Black));
+            items.Add(new IconCheckBox().InitSampleData(Theme.Black));
+            items.Add(new RangeCalendar());
+            items.Add(rangeSlider);
             items.Add(new Button().InitSampleData(Theme.Light));
             items.Add(new Slider().InitSampleData(Theme.Light));
             items.Add(new ComboBox().InitSampleData(Theme.Light));
