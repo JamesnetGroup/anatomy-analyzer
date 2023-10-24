@@ -10,9 +10,18 @@ namespace AnatomyAnalyzer.Local.Converters
         {
             int count = int.Parse(value.ToString());
 
-            count = count < 9 ? 4 : 8;
-
-            return count;
+            if (count >= 50)
+            {
+                return 10;
+            }
+            else if (count < 9)
+            {
+                return 4;
+            }
+            else
+            {
+                return 8;
+            }
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

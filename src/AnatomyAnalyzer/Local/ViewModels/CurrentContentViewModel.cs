@@ -45,9 +45,11 @@ namespace AnatomyAnalyzer.Local.ViewModels
         {
             if (!Instances.ContainsKey(item))
             {
-                Control control = (Control)Activator.CreateInstance(item.Type);
-                item.Instance = control;
-                control.Loaded += Control_Loaded;
+                if (item.Instance == null)
+                {
+                    item.Instance = (Control)Activator.CreateInstance(item.Type);
+                }
+                item.Instance.Loaded += Control_Loaded;
                 Instances.Add(item, item);
             }
             return Instances[item];

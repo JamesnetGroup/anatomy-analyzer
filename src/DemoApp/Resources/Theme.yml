@@ -10,7 +10,7 @@ themes:
       light: "#000000"
   - key: Basic.Background
     colors:
-      black: "#252525"
+      black: "#1f1f1f"
       light: "#FFFFFF"
   - key: ControlTree.Foreground
     colors:

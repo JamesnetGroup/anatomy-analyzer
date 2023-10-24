@@ -11,7 +11,7 @@ namespace DemoApp.Properties
     {
         protected override string GetDefaultLanguage()
         {
-            return "CHN";
+            return "USA";
         }
 
         protected override string GetDefaultTheme()

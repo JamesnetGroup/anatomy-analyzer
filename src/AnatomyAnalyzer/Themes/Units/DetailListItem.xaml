@@ -22,9 +22,9 @@
                             <Label x:Name="text"
                                    Background="{DynamicResource DatailListItem.Header.Background}"
                                    Foreground="{DynamicResource DatailListItem.Foreground}"
-                                   FontWeight="Bold"
                                    Content="{Binding Name}"
-                                   Padding="20 4 20 4"
+                                   FontSize="10.5"
+                                   Padding="4 4 4 4"
                                    HorizontalContentAlignment="Center"
                                    VerticalAlignment="Center"/>
                             <Viewbox Grid.Row="1"

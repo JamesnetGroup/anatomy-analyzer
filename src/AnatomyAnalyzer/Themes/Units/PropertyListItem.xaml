@@ -21,10 +21,10 @@
                                 <ColumnDefinition Width="150" SharedSizeGroup="Name"/>
                                 <ColumnDefinition Width="*" MinWidth="150"/>
                             </Grid.ColumnDefinitions>
-                            <Label Background="{DynamicResource PropListItem.Label.Background}"
+                            <Label Background="#292929"
                                    FontFamily="Roboto"
                                    FontWeight="SemiBold"
-                                   Foreground="#000000"
+                                   Foreground="#FFFFFF"
                                    BorderThickness="0 0 0.59 0"
                                    BorderBrush="{DynamicResource PropListItem.BorderBrush}"
                                    Padding="8 5 8 5">

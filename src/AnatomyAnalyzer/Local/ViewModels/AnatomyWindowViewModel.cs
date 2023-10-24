@@ -75,6 +75,9 @@ namespace AnatomyAnalyzer.Local.ViewModels
                     TemplateXaml = FormatXaml(raw);
                 }
             }
+
+            Childs[0].IsFolderExpanded = true;
+            Childs[0].IsFolderSelected = true;
         }
 
         public string FormatXaml(string xamlString)
@@ -95,7 +98,7 @@ namespace AnatomyAnalyzer.Local.ViewModels
                 {
                     Name = child.GetType().Name,
                     Type = child.GetType(),
-                    Instance = child,
+                    Instance = (FrameworkElement)child,
                     Depth = currentDepth
                 };
 
@@ -113,21 +116,37 @@ namespace AnatomyAnalyzer.Local.ViewModels
 
         private void ControlChanged(object sender, AnatomyEventArgs e)
         {
-            foreach (Type item in e.Controls)
+            foreach (var item in e.Controls)
             {
-                if (item.IsSubclassOf(typeof(Control)))
+                if (item is Type type && type.IsSubclassOf(typeof(Control)))
                 {
                     AnatomyItem anatomyItem = new()
                     {
-                        Name = item.Name,
-                        Type = item,
+                        Name = type.Name,
+                        Type = type,
                         IconType = GetRandomIconType(),
                         Items = new(),
                         IsFolderExpanded = true
                     };
                     Controls.Add(anatomyItem);
                 }
+                else if (item is Control control)
+                {
+                    AnatomyItem anatomyItem = new()
+                    {
+                        Name = item.GetType().Name,
+                        Type = item.GetType(),
+                        IconType = GetRandomIconType(),
+                        Items = new(),
+                        Instance = (FrameworkElement)item,
+                        IsFolderExpanded = true
+                    };
+                    Controls.Add(anatomyItem);
+                }
             }
+
+            Controls[0].IsFolderExpanded = true;
+            Controls[0].IsFolderSelected = true;
         }
 
         public static IconType GetRandomIconType()
