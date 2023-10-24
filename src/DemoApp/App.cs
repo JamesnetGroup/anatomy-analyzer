@@ -11,6 +11,7 @@ namespace DemoApp
     {
         protected override void RegisterControls(AnatomyItemCollection items)
         {
+            items.Add<PlayButton>();
             items.Add(new Button().InitSampleData(Theme.Light));
             items.Add(new Slider().InitSampleData(Theme.Light));
             items.Add(new ComboBox().InitSampleData(Theme.Light));
