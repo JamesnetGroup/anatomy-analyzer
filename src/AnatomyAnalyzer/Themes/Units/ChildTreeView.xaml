@@ -8,7 +8,7 @@
         <Setter Property="Background" Value="{DynamicResource ChildTree.Background}"/>
         <Setter Property="FontFamily" Value="{DynamicResource Basic.Fonts}"/>
         <Setter Property="Background" Value="#191919"/>
-        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Template">

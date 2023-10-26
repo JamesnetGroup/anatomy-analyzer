@@ -65,7 +65,8 @@
                             <xamls:UnderlineMenuBox>
                                 <xamls:UnderlineMenuBoxItem Icon="ChartBubble" Content="{DynamicResource Properties}" IsSelected="True"/>
                             </xamls:UnderlineMenuBox>
-                            <units:PropertyListView ItemsSource="{Binding Properties}"/>
+                            <xamls:PropertyList TargetObject="{Binding Instance}"
+                                                VerticalAlignment="Stretch"/>
                         </james:JamesGrid>
                     </Border>
                 </james:JamesGrid>

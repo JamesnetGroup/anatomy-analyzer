@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace AnatomyAnalyzer.Local.Models
+﻿namespace AnatomyAnalyzer.Local.Models
 {
     public class AnatomyItemCollection : List<object>
     {

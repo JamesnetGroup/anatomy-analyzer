@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Media;
-using System.Collections.Generic;
 using System.Windows.Controls.Primitives;
 using System.Windows.Controls;
 

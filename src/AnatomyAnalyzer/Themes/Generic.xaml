@@ -3,8 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/ExpandButton.xaml"/>
-        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/PropertyListItem.xaml"/>
-        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/PropertyListView.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/DetailListItem.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/DetailList.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/ChildTreeItem.xaml"/>

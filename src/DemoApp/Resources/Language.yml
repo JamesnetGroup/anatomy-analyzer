@@ -25,7 +25,7 @@
       esp: Nivel jerárquico
   - key: InstancePreview
     items:
-      usa: Instance preview
+      usa: Instance Partial View
       kor: 계층 구조 레이어
       chn: 层次结构层222
       jpn: 階層レイヤー

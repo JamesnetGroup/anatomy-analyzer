@@ -18,11 +18,15 @@ namespace DemoApp
             rangeSlider.Maximum = 100;
             rangeSlider.Width = 200;
 
+            PropertyList propList = new();
+            propList.TargetObject = this;
+
             items.Add<PlayButton>();
             items.Add(new ToggleSwitch().InitSampleData(Theme.Black));
             items.Add(new IconCheckBox().InitSampleData(Theme.Black));
             items.Add(new RangeCalendar());
             items.Add(rangeSlider);
+            items.Add(propList);
             items.Add(new Button().InitSampleData(Theme.Light));
             items.Add(new Slider().InitSampleData(Theme.Light));
             items.Add(new ComboBox().InitSampleData(Theme.Light));
