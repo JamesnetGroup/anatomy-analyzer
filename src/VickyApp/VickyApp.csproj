@@ -1,14 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Images\logo.png" />
+    <None Remove="Themes\Language.yml" />
+    <None Remove="Themes\Theme.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Themes\Language.yml" />
+    <EmbeddedResource Include="Themes\Theme.yml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Images\logo.png" />
+    <ProjectReference Include="..\AnatomyAnalyzer\AnatomyAnalyzer.csproj" />
   </ItemGroup>
 
 </Project>

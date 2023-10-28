@@ -9,33 +9,52 @@ using AnatomyAnalyzer.Local.Models;
 using AnatomyAnalyzer.Local.Helpers;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Jamesnet.Wpf.Global.Composition;
+using Jamesnet.Wpf.Composition;
 
 namespace AnatomyAnalyzer.Local.ViewModels
 {
     public partial class AnatomyWindowViewModel : ObservableBase, IViewLoadable
     {
         private readonly AnatomyService _anatomyService;
+        private readonly ResourceManager _resourceManager;
         private readonly ContentManager _contentManager;
 
         public Dictionary<Type, DependencyObject> Instances { get; set; }
         public ObservableCollection<AnatomyItem> Controls { get; set; }
         public ObservableCollection<AnatomyItem> Childs { get; set; }
         public ObservableCollection<PropertyItem> Properties { get; set; }
+        public List<LanguageModel> Languages { get; set; }
 
         [ObservableProperty]
         private object _instance;
 
-        public AnatomyWindowViewModel(ContentManager contentManager, AnatomyService anatomyService)
+        [ObservableProperty]
+        private LanguageModel _language;
+
+        public AnatomyWindowViewModel(ContentManager contentManager, AnatomyService anatomyService, ResourceManager resourceManager)
         {
             Instances = new();
             Controls = new();
             Childs = new();
             Properties = new();
+            Languages = GetLanguages();
 
             _contentManager = contentManager;
             _anatomyService = anatomyService;
+            _resourceManager = resourceManager;
             _anatomyService.ControlChanged += ControlChanged;
             _anatomyService.ControlLoaded += ControlLoaded;
+        }
+
+        private List<LanguageModel> GetLanguages()
+        {
+            List<LanguageModel> source = new();
+            source.Add(new LanguageModel { Name = "KOR", Id = ImageType.KOR });
+            source.Add(new LanguageModel { Name = "USA", Id = ImageType.USA});
+            source.Add(new LanguageModel { Name = "CHN", Id = ImageType.CHN });
+            source.Add(new LanguageModel { Name = "JPN", Id = ImageType.JPN });
+
+            return source;
         }
 
         private void ControlLoaded(object sender, AnatomyEventArgs e)
@@ -86,6 +105,14 @@ namespace AnatomyAnalyzer.Local.ViewModels
         public void OnLoaded(IViewable view)
         {
             _contentManager.ActiveContent("ContentRegion", "CurrentContent");
+            _resourceManager.SwitchLanguage("USA");
+            Language = Languages.First(x => x.Name == "USA");
+        }
+
+        [RelayCommand]
+        partial void OnLanguageChanged(LanguageModel value)
+        {
+            _resourceManager.SwitchLanguage(value.Name);
         }
 
         private void ControlChanged(object sender, AnatomyEventArgs e)

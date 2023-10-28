@@ -37,11 +37,22 @@
         </Setter>
         <Setter Property="Content">
             <Setter.Value>
-                <james:JamesGrid Rows="*" Columns="Auto, Auto, *7, *3">
+                <james:JamesGrid Rows="Auto, *" Columns="Auto, Auto, *7, *3">
+                    <StackPanel Grid.ColumnSpan="4">
+                        <Path Data="M13.740341,3.09 L11.210341,5.03 12.120341,8.09 9.4903414,6.28 6.8603414,8.09 7.7703414,5.03 5.2403414,3.09 8.4303414,3 9.4903414,0 10.550341,3 13.740341,3.09 M17.240341,10 L15.600341,11.25 16.190341,13.23 14.490341,12.06 12.790341,13.23 13.380341,11.25 11.740341,10 13.800341,9.95 14.490341,8 15.180341,9.95 17.240341,10 M13.320341,16.97 C10.490341,16.81 7.6903414,15.64 5.5203414,13.5 3.3503414,11.31 2.1903414,8.5 2.0303414,5.68 -0.77965863,8.82 -0.66965863,13.64 2.3403414,16.66 5.3603414,19.67 10.180341,19.78 13.320341,16.97 z"
+                                  Fill="White"/>
+
+
+
+                        <units:LanguageListBox ItemsSource="{Binding Languages}"
+                                               SelectedItem="{Binding Language}"
+                                               HorizontalAlignment="Right"
+                                               Margin="10 10 10 0"/>
+                    </StackPanel>
                     <Border BorderThickness="0.51" BorderBrush="#000000" Margin="10">
                     <james:JamesGrid Rows="Auto, *" Columns="*">
                         <xamls:UnderlineMenuBox>
-                            <xamls:UnderlineMenuBoxItem Icon="ChartBubble" Content="Controls" IsSelected="True"/>
+                                <xamls:UnderlineMenuBoxItem Icon="ChartBubble" Content="{DynamicResource Controls}" IsSelected="True"/>
                         </xamls:UnderlineMenuBox>
                         <units:ControlTreeView ItemsSource="{Binding Controls}"
                                            SelectionCommand="{Binding TreeItemSelectedCommand}"/>

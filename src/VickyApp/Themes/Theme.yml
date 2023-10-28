@@ -1,0 +1,98 @@
+﻿fonts:
+  - key: Basic.Font
+    fonts:
+      black: "Roboto"
+      light: "Roboto"
+themes:
+  - key: Basic.Foreground
+    colors:
+      black: "#FFFFFF"
+      light: "#000000"
+  - key: Basic.Background
+    colors:
+      black: "#1f1f1f"
+      light: "#FFFFFF"
+  - key: ControlTree.Foreground
+    colors:
+      black: "#FFFFFF"
+      light: "#000000"
+  - key: ControlTree.Fill
+    colors:
+      black: "#11FFFFFF"
+      light: "#11FFFFFF"
+  - key: ControlTree.Foreground.IsSelected
+    colors:
+      black: "#000000"
+      light: "#000000"
+  - key: ControlTree.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key: ControlTree.Background.IsSelected
+    colors:
+      black: "#EFB13A"
+      light: "#EFB13A"
+  - key: ChildTree.Foreground
+    colors:
+      black: "#FFFFFF"
+      light: "#000000"
+  - key: ChildTree.Foreground.IsEmpty
+    colors:
+      black: "#66FFFFFF"
+      light: "#AA000000"
+  - key: ChildTree.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key:  Content.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key:  Content.Behind.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key: DatailList.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key: DatailList.BorderBrush
+    colors:
+      black: "#EFB13A"
+      light: "#EFB13A"
+  - key: DatailListItem.Header.Background
+    colors:
+      black: "#EFB13A"
+      light: "#EFB13A"
+  - key: DatailListItem.BorderBrush
+    colors:
+      black: "#EFB13A"
+      light: "#EFB13A"
+  - key: DatailListItem.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key:  DatailListItem.Foreground
+    colors:
+      black: "#000000"
+      light: "#000000"
+  - key: PropList.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key:  PropListItem.BorderBrush
+    colors:
+      black: "#444444"
+      light: "#444444"
+  - key:  PropListItem.Background
+    colors:
+      black: "#191919"
+      light: "#EEEEEE"
+  - key:  PropListItem.Label.Background
+    colors:
+      black: "#EFB13A"
+      light: "#EFB13A"
+  - key:  PropListItem.Foreground
+    colors:
+      black: "#FFFFFF"
+      light: "#000000"
