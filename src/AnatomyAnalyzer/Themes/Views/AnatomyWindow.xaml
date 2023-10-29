@@ -2,9 +2,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:james="https://jamesnet.dev/xaml/presentation"
-    xmlns:xamls="clr-namespace:XamlDesign.Wpf.UI.Units;assembly=XamlDesign.Wpf"
-    xmlns:views="clr-namespace:AnatomyAnalyzer.UI.Views"
-    xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
+    xmlns:views="clr-namespace:AnatomyAnalyzer.UI.Views">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/DarkThemeWindow.xaml" />
     </ResourceDictionary.MergedDictionaries>
@@ -37,50 +35,7 @@
         </Setter>
         <Setter Property="Content">
             <Setter.Value>
-                <james:JamesGrid Rows="Auto, *" Columns="Auto, Auto, *7, *3">
-                    <StackPanel Grid.ColumnSpan="4">
-                        <Path Data="M13.740341,3.09 L11.210341,5.03 12.120341,8.09 9.4903414,6.28 6.8603414,8.09 7.7703414,5.03 5.2403414,3.09 8.4303414,3 9.4903414,0 10.550341,3 13.740341,3.09 M17.240341,10 L15.600341,11.25 16.190341,13.23 14.490341,12.06 12.790341,13.23 13.380341,11.25 11.740341,10 13.800341,9.95 14.490341,8 15.180341,9.95 17.240341,10 M13.320341,16.97 C10.490341,16.81 7.6903414,15.64 5.5203414,13.5 3.3503414,11.31 2.1903414,8.5 2.0303414,5.68 -0.77965863,8.82 -0.66965863,13.64 2.3403414,16.66 5.3603414,19.67 10.180341,19.78 13.320341,16.97 z"
-                                  Fill="White"/>
-
-
-
-                        <units:LanguageListBox ItemsSource="{Binding Languages}"
-                                               SelectedItem="{Binding Language}"
-                                               HorizontalAlignment="Right"
-                                               Margin="10 10 10 0"/>
-                    </StackPanel>
-                    <Border BorderThickness="0.51" BorderBrush="#000000" Margin="10">
-                    <james:JamesGrid Rows="Auto, *" Columns="*">
-                        <xamls:UnderlineMenuBox>
-                                <xamls:UnderlineMenuBoxItem Icon="ChartBubble" Content="{DynamicResource Controls}" IsSelected="True"/>
-                        </xamls:UnderlineMenuBox>
-                        <units:ControlTreeView ItemsSource="{Binding Controls}"
-                                           SelectionCommand="{Binding TreeItemSelectedCommand}"/>
-                    </james:JamesGrid>
-                    </Border>
-                    <Border BorderThickness="0.51" BorderBrush="#000000" Margin="10">
-                        <james:JamesGrid Rows="Auto, *" Columns="*">
-                            <xamls:UnderlineMenuBox>
-                                <xamls:UnderlineMenuBoxItem Icon="ChartBubble" Content="{DynamicResource HierarchyLayer}" IsSelected="True"/>
-                            </xamls:UnderlineMenuBox>
-                            <units:ChildTreeView ItemsSource="{Binding Childs}"
-                                         SelectionCommand="{Binding ChildSelectionCommand}"/>
-                        </james:JamesGrid>
-                    </Border>
-                    <Border BorderThickness="0.51" BorderBrush="#000000" Margin="10">
-                        <james:JamesRegion RegionName="ContentRegion"
-                                       MinWidth="200" MinHeight="100"/>
-                    </Border>
-                    <Border BorderThickness="0.51" BorderBrush="#000000" Margin="10">
-                        <james:JamesGrid Rows="Auto, *" Columns="*">
-                            <xamls:UnderlineMenuBox>
-                                <xamls:UnderlineMenuBoxItem Icon="ChartBubble" Content="{DynamicResource Properties}" IsSelected="True"/>
-                            </xamls:UnderlineMenuBox>
-                            <xamls:PropertyList TargetObject="{Binding Instance}"
-                                                VerticalAlignment="Stretch"/>
-                        </james:JamesGrid>
-                    </Border>
-                </james:JamesGrid>
+                <james:JamesRegion RegionName="MainRegion"/>
             </Setter.Value>
         </Setter>
     </Style>

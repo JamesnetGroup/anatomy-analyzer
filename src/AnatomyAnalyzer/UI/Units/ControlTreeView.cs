@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using XamlDesign.Wpf.UI.Units;
 
 namespace AnatomyAnalyzer.UI.Units
 {

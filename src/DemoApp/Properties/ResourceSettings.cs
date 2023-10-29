@@ -2,26 +2,11 @@
 
 namespace DemoApp.Properties
 {
-    internal class ResourceSettings : ResourceInitializer
+    internal class ResourceSettings : BaseResourceInitializer
     {
-        protected override string GetDefaultLanguage()
-        {
-            return "USA";
-        }
-
-        protected override string GetDefaultTheme()
-        {
-            return "Black";
-        }
-
-        protected override string GetLanguageResource()
-        {
-            return "DemoApp.Resources.Language.yml";
-        }
-
-        protected override string GetThemeResource()
-        {
-            return "DemoApp.Resources.Theme.yml";
-        }
+        protected override string DetermineDefaultLocale() => "USA";
+        protected override string DetermineDefaultThemeName() => "Black";
+        protected override string FetchLocalePath() => "DemoApp.Resources.Language.yml";
+        protected override string FetchThemePath() => "DemoApp.Resources.Theme.yml";
     }
 }

@@ -2,7 +2,6 @@
 using AnatomyAnalyzer.Local.Models;
 using DemoApp.Extensions;
 using DemoApp.Support.UI.Units;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using XamlDesign.Wpf.UI.Units;

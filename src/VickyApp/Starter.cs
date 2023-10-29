@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VickyApp.Properties;
+﻿using VickyApp.Properties;
 
 namespace VickyApp
 {
@@ -13,7 +8,7 @@ namespace VickyApp
         private static void Main(string[] args)
         {
             _ = new App()
-                .InitializeTheme<ResourceSettings>()
+                .InitializeResource<ResourceSettings>()
                 .Run();
         }
     }

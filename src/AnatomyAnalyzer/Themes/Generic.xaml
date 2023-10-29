@@ -12,6 +12,7 @@
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/LanguageListBoxItem.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Units/LanguageListBox.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Views/CurrentContent.xaml"/>
+        <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Views/MainContent.xaml"/>
         <ResourceDictionary Source="/AnatomyAnalyzer;component/Themes/Views/AnatomyWindow.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

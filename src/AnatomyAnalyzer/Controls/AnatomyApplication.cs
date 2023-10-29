@@ -38,8 +38,10 @@ namespace AnatomyAnalyzer.Controls
             base.RegisterTypes(containerRegistry);
 
             containerRegistry.RegisterSingleton<AnatomyService>();
+            containerRegistry.RegisterSingleton<IViewable, MainContent>("MainContent");
             containerRegistry.RegisterSingleton<IViewable, CurrentContent>("CurrentContent");
             ViewModelLocationProvider.Register<AnatomyWindow, AnatomyWindowViewModel>();
+            ViewModelLocationProvider.Register<MainContent, MainContentViewModel>();
             ViewModelLocationProvider.Register<CurrentContent, CurrentContentViewModel>();
         }
 

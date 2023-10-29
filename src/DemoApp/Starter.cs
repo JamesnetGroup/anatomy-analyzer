@@ -8,7 +8,7 @@ namespace DemoApp
         private static void Main(string[] args)
         {
             _ = new App()
-                .InitializeTheme<ResourceSettings>()
+                .InitializeResource<ResourceSettings>()
                 .Run();
         }
     }
