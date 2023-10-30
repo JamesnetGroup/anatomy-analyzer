@@ -1,0 +1,78 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:james="https://jamesnet.dev/xaml/presentation"
+    xmlns:based="clr-namespace:Anatomy.Support.UI.Units;assembly=Anatomy.Support"
+    xmlns:cnvts="clr-namespace:Anatomy.Support.Local.Converters;assembly=Anatomy.Support"
+    xmlns:units="clr-namespace:Anatomy.Main.UI.Units">
+
+    <Style TargetType="{x:Type units:ControlTreeItem}">
+        <Setter Property="IsExpanded" Value="{Binding IsFolderExpanded, Mode=TwoWay}"/>
+        <Setter Property="IsSelected" Value="{Binding IsFolderSelected}"/>
+        <Setter Property="ItemsSource" Value="{Binding Children}"/>
+        <Setter Property="Foreground" Value="{DynamicResource FontColor}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type units:ControlTreeItem}">
+                    <james:JamesGrid Rows="Auto, Auto" Columns="*">
+                        <Border x:Name="item"
+                                CornerRadius="0"
+                                Background="{TemplateBinding Background}"
+                                Padding="{Binding Depth, Converter={cnvts:DepthConverter}}">
+                            <james:JamesGrid Rows="*" Columns="Auto, Auto, *, Auto">
+                                <based:ExpandButton x:Name="expand"
+                                                     Foreground="{TemplateBinding Foreground}"
+                                                     IsChecked="{Binding IsFolderExpanded, Mode=OneWay}"
+                                                     Visibility="Collapsed"/>
+                                <james:JamesIcon x:Name="icon"
+                                                 Icon="{Binding IconType}"
+                                                 Width="16" Height="16"
+                                                 Margin="10 2 10 2"
+                                                 Fill="{TemplateBinding Foreground}"/>
+                                <TextBlock x:Name="text"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           Text="{Binding Name}"
+                                           Margin="0 6 30 6"
+                                           TextTrimming="CharacterEllipsis"
+                                           VerticalAlignment="Center"/>
+                                <james:JamesIcon x:Name="chevron" 
+                                                 Icon="ChevronRight"
+                                                 Width="16" Height="16"
+                                                 Margin="10 2 10 2"
+                                                 HorizontalAlignment="Right"
+                                                 Fill="{DynamicResource FontColor}"/>
+                            </james:JamesGrid>
+                        </Border>
+                        <ItemsPresenter x:Name="items" Grid.Row="1" Visibility="Collapsed"/>
+                    </james:JamesGrid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded" Value="True">
+                            <Setter TargetName="items" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <DataTrigger Binding="{Binding ElementName=expand, Path=IsChecked}" Value="True">
+                            <Setter TargetName="items" Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=expand, Path=IsChecked}" Value="False">
+                            <Setter TargetName="items" Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource SignitureColor}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource ContrastFontColor}"/>
+                            <Setter Property="Fill" TargetName="chevron" Value="{DynamicResource SignitureColor}"/>
+                        </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IconType}" Value="Folder"/>
+                                <Condition Binding="{Binding IsFolderExpanded}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="icon" Property="Icon" Value="FolderOpen"/>
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

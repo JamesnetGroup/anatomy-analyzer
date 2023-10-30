@@ -5,8 +5,8 @@
     xmlns:xamls="clr-namespace:XamlDesign.Wpf.UI.Units;assembly=XamlDesign.Wpf"
     xmlns:themeswitch="https://jamesnet.dev/xaml/presentation/themeswitch"
     xmlns:cnvts="clr-namespace:XamlDesign.Wpf.Local.Converters;assembly=XamlDesign.Wpf"
-    xmlns:views="clr-namespace:AnatomyAnalyzer.UI.Views"
-    xmlns:units="clr-namespace:AnatomyAnalyzer.UI.Units">
+    xmlns:views="clr-namespace:Anatomy.Main.UI.Views"
+    xmlns:units="clr-namespace:Anatomy.Main.UI.Units">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/DarkThemeWindow.xaml" />
     </ResourceDictionary.MergedDictionaries>
@@ -22,11 +22,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type views:MainContent}">
                     <james:JamesGrid Rows="Auto, *" Columns="*">
-                        <units:MainMenuBox x:Name="menu" HorizontalAlignment="Stretch">
+                        <xamls:UnderlineMenuBox x:Name="menu" HorizontalAlignment="Stretch">
                             <xamls:UnderlineMenuBoxItem Content="Analyzer" Icon="ChartPie" IsSelected="True"/>
                             <xamls:UnderlineMenuBoxItem Content="Themes" Icon="Palette"/>
                             <xamls:UnderlineMenuBoxItem Content="Languages" Icon="Cog"/>
-                        </units:MainMenuBox>
+                        </xamls:UnderlineMenuBox>
                         
                         <james:JamesGrid Rows="*" Columns="Auto, Auto, *7, *3" Margin="5 0 5 0"
                                          Visibility="{Binding ElementName=menu, Path=SelectedMenuItem, Converter={cnvts:EqualityToVisibilityConverter}, ConverterParameter=Analyzer}">

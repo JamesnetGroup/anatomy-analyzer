@@ -1,0 +1,13 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Anatomy.Main;component/Themes/Units/ChildTreeItem.xaml"/>
+        <ResourceDictionary Source="/Anatomy.Main;component/Themes/Units/ChildTreeView.xaml"/>
+        <ResourceDictionary Source="/Anatomy.Main;component/Themes/Units/ControlTreeItem.xaml"/>
+        <ResourceDictionary Source="/Anatomy.Main;component/Themes/Units/ControlTreeView.xaml"/>
+        <ResourceDictionary Source="/Anatomy.Main;component/Themes/Units/LanguageListBoxItem.xaml"/>
+        <ResourceDictionary Source="/Anatomy.Main;component/Themes/Units/LanguageListBox.xaml"/>
+        <ResourceDictionary Source="/Anatomy.Main;component/Themes/Views/MainContent.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

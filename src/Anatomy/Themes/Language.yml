@@ -1,0 +1,49 @@
+﻿languages:
+  - key: ApplicationTitle
+    items:
+      usa: Anatomy Analyzer
+      kor: 컨트롤 해체 분석기
+      chn: 控制解剖分析仪
+      jpn: コントロールアナトミーアナライザー
+      vnm: Kiểm soát máy phân tích giải phẫu
+      esp: Analizador anatómico de control
+  - key: Controls
+    items:
+      usa: Controls
+      kor: 컨트롤
+      chn: 控制装置
+      jpn: コントロール
+      vnm: Điều khiển
+      esp: Controla
+  - key: HierarchyLayer
+    items:
+      usa: Hierarchy layer
+      kor: 계층 구조 레이어
+      chn: 层次结构层
+      jpn: 階層レイヤー
+      vnm: Cấp độ phân cấp
+      esp: Nivel jerárquico
+  - key: InstancePreview
+    items:
+      usa: Instance Partial View
+      kor: 계층 구조 레이어
+      chn: 层次结构层222
+      jpn: 階層レイヤー
+      vnm: Cấp độ phân cấp
+      esp: Nivel jerárquico
+  - key: Properties
+    items:
+      usa: Properties
+      kor: 계층 구조 레이어
+      chn: 层次结构层444
+      jpn: 階層レイヤー
+      vnm: Cấp độ phân cấp
+      esp: Nivel jerárquico
+  - key: JamesVicky
+    items:
+      usa: #FFFFFF
+      kor: 계층 구조 레이어
+      chn: 层次结构层444
+      jpn: 階層レイヤー
+      vnm: Cấp độ phân cấp
+      esp: Nivel jerárquico

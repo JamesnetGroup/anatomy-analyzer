@@ -1,0 +1,10 @@
+﻿fonts:
+  - key: Basic.Font
+    fonts:
+      black: "Roboto"
+      light: "Roboto"
+themes:
+  - key: Themes.SignitureColor
+    colors:
+      black: "#0c9ca5"
+      light: "#000000"

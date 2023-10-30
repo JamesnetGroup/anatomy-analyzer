@@ -1,8 +1,8 @@
 ﻿using Jamesnet.Wpf.Controls;
-using Jamesnet.Wpf.Mvvm;
 using Jamesnet.Wpf.Global.Composition;
+using Jamesnet.Wpf.Mvvm;
 
-namespace AnatomyAnalyzer.Local.ViewModels
+namespace Anatomy.Forms.Local.ViewModels
 {
     public partial class AnatomyWindowViewModel : ObservableBase, IViewLoadable
     {

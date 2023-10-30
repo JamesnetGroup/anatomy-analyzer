@@ -2,22 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Images\logo.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.88" />
+    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.94" />
     <PackageReference Include="ThemeSwitch" Version="1.0.0.5" />
+    <PackageReference Include="XamlDesign.Wpf" Version="1.0.0.10" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Images\logo.png" />
+    <ProjectReference Include="..\Anatomy.Support\Anatomy.Support.csproj" />
   </ItemGroup>
 
 </Project>

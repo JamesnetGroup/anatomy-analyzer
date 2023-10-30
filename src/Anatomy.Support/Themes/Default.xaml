@@ -2,18 +2,22 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:themeswitch="https://jamesnet.dev/xaml/presentation/themeswitch"
                     xmlns:xamls="clr-namespace:XamlDesign.Wpf.UI.Units;assembly=XamlDesign.Wpf">
-    
+
+    <SolidColorBrush x:Key="SignitureColor" Color="#0c9ca5"/>
     <SolidColorBrush x:Key="SwitctBasehColor" Color="#10FFFFFF"/>
     <SolidColorBrush x:Key="RangeBaseColor" Color="#88203731"/>
-    <SolidColorBrush x:Key="SignitureColor" Color="#0c9ca5"/>
     <SolidColorBrush x:Key="MouseOverColor" Color="#0a828a"/>
     <SolidColorBrush x:Key="PressedColor" Color="#0a777e"/>
     <SolidColorBrush x:Key="SeparatorColor" Color="#0FFFFFFF"/>
-    <SolidColorBrush x:Key="TextBoxBoxBorderColor" Color="#0b666c"/>
     <SolidColorBrush x:Key="BaseCheckBoxColor" Color="#0a585d"/>
+    <SolidColorBrush x:Key="BaseTextBoxColor" Color="#151515"/>
+    <SolidColorBrush x:Key="TextBoxBorderBrush" Color="#0b666c"/>
     <SolidColorBrush x:Key="BaseunderlineBrush" Color="#330c9ca5"/>
+    <SolidColorBrush x:Key="BaseThemeSwitchBrush" Color="#151515"/>
 
     <SolidColorBrush x:Key="FontColor" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="ContrastFontColor" Color="#000000"/>
+    <SolidColorBrush x:Key="EmptyFontColor" Color="#66FFFFFF"/>
     <SolidColorBrush x:Key="PlaceholderFontColor" Color="#77FFFFFF"/>
 
     <Style TargetType="{x:Type xamls:UnderlineMenuBox}">
@@ -24,7 +28,7 @@
 
     <Style TargetType="{x:Type themeswitch:ThemeSwitch}" >
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="#151515"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource BaseThemeSwitchBrush}"/>
         <Setter Property="CornerRadius" Value="25"/>
         <Setter Property="Width" Value="Auto"/>
         <Setter Property="Height" Value="50"/>
@@ -122,37 +126,14 @@
         <Setter Property="HeaderPressedBorderBrush" Value="Transparent"/>
     </Style>
 
-    <Style TargetType="{x:Type xamls:SmartTextBox}">
-        <Setter Property="Background" Value="#151515"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBoxBorderColor}"/>
+    <!--<Style TargetType="{x:Type xamls:SmartTextBox}">
+        <Setter Property="Background" Value="{DynamicResource BaseTextBoxColor}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}"/>
         <Setter Property="FocusedBorderBrush" Value="{DynamicResource SignitureColor}"/>
         <Setter Property="PlaceholderForeground" Value="{DynamicResource PlaceholderFontColor}"/>
         <Setter Property="Foreground" Value="{DynamicResource FontColor}"/>
         <Setter Property="FocusedBackground" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="1"/>
-    </Style>
-
-    <Style TargetType="{x:Type xamls:RangeSlider}">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="TrackBackground" Value="{DynamicResource RangeBaseColor}"/>
-        <Setter Property="TrackRangeBackground" Value="{DynamicResource SignitureColor}"/>
-    </Style>
-
-    <Style TargetType="{x:Type xamls:IconCheckBox}">
-        <Setter Property="IconBackground" Value="{DynamicResource BaseCheckBoxColor}"/>
-        <Setter Property="IconCheckedBackground" Value="{DynamicResource SignitureColor}"/>
-    </Style>
-
-    <Style TargetType="{x:Type xamls:RadioExpander}">
-        <Setter Property="Background" Value="#191919"/>
-        <Setter Property="Foreground" Value=" #FFFFFF"/>
-    </Style>
-
-    <Style TargetType="{x:Type xamls:DateRangeSelector}">
-        <Setter Property="BorderBrush" Value="{DynamicResource SignitureColor}"/>
-    </Style>
-
-    <Style TargetType="{x:Type xamls:CalendarListItem}">
-    </Style>
+    </Style>-->
 
 </ResourceDictionary>

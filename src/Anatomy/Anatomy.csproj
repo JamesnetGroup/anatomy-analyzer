@@ -19,8 +19,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.88" />
-    <PackageReference Include="ThemeSwitch" Version="1.0.0.5" />
+    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.94" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anatomy.Analysis\Anatomy.Analysis.csproj" />
+    <ProjectReference Include="..\Anatomy.Forms\Anatomy.Forms.csproj" />
+    <ProjectReference Include="..\Anatomy.Main\Anatomy.Main.csproj" />
+    <ProjectReference Include="..\Anatomy.Support\Anatomy.Support.csproj" />
   </ItemGroup>
 
 </Project>
