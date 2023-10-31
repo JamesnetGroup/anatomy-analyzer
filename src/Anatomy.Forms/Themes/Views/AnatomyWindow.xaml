@@ -4,11 +4,10 @@
     xmlns:james="https://jamesnet.dev/xaml/presentation"
     xmlns:views="clr-namespace:Anatomy.Forms.UI.Views">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/DarkThemeWindow.xaml" />
+        <ResourceDictionary Source="/Anatomy.Support;Component/Themes/Default.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type ContentControl}" x:Key="Title">
-        <Setter Property="FontFamily" Value="{DynamicResource Basic.Font}"/>
         <Setter Property="Margin" Value="0 0 0 0"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -25,9 +24,6 @@
 
     <Style TargetType="{x:Type views:AnatomyWindow}"
            BasedOn="{StaticResource {x:Type james:DarkThemeWindow}}">
-        <Setter Property="Foreground" Value="{DynamicResource Basic.Foreground}"/>
-        <Setter Property="Background" Value="{DynamicResource Basic.Background}"/>
-        <Setter Property="FontFamily" Value="{DynamicResource Basic.Font}"/>
         <Setter Property="Title">
             <Setter.Value>
                 <ContentControl Style="{StaticResource Title}"/>

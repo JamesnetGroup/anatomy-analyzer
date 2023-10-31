@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:james="https://jamesnet.dev/xaml/presentation"
                     xmlns:themeswitch="https://jamesnet.dev/xaml/presentation/themeswitch"
                     xmlns:xamls="clr-namespace:XamlDesign.Wpf.UI.Units;assembly=XamlDesign.Wpf">
 
@@ -14,14 +15,21 @@
     <SolidColorBrush x:Key="TextBoxBorderBrush" Color="#0b666c"/>
     <SolidColorBrush x:Key="BaseunderlineBrush" Color="#330c9ca5"/>
     <SolidColorBrush x:Key="BaseThemeSwitchBrush" Color="#151515"/>
-
+    <SolidColorBrush x:Key="BaseBackground" Color="#1f1f1f"/>
     <SolidColorBrush x:Key="FontColor" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="ContrastFontColor" Color="#000000"/>
     <SolidColorBrush x:Key="EmptyFontColor" Color="#66FFFFFF"/>
     <SolidColorBrush x:Key="PlaceholderFontColor" Color="#77FFFFFF"/>
 
+    <Style TargetType="{x:Type james:DarkThemeWindow}" 
+           BasedOn="{StaticResource {x:Type james:DarkThemeWindow}}">
+        <Setter Property="Foreground" Value="{DynamicResource FontColor}"/>
+        <Setter Property="TitleBarColor" Value="{DynamicResource BaseBackground}"/>
+        <Setter Property="Background" Value="{DynamicResource BaseBackground}"/>
+    </Style>
+
     <Style TargetType="{x:Type xamls:UnderlineMenuBox}">
-        <Setter Property="UnderlineBrush" Value="{DynamicResource BaseunderlineBrush}"/>
+        <Setter Property="UnderlineBrush" Value="{DynamicResource BaseUnderlineBrush}"/>
         <Setter Property="SelectedUnderlineBrush" Value="{DynamicResource SignitureColor}"/>
         <Setter Property="Foreground" Value="{DynamicResource FontColor}"/>
     </Style>

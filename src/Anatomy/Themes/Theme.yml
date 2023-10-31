@@ -1,8 +1,8 @@
 ﻿fonts:
-  - key: Basic.Font
+  - key: BasicFont
     fonts:
-      black: "Roboto"
-      light: "Roboto"
+      black: "Segoe UI"
+      light: "Segoe UI"
 themes:
   - key: Themes.SignitureColor
     colors:
