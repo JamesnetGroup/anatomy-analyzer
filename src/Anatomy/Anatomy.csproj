@@ -19,7 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.98" />
+    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.99" />
+    <PackageReference Include="XamlDesign.Wpf" Version="1.0.0.15" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +28,12 @@
     <ProjectReference Include="..\Anatomy.Forms\Anatomy.Forms.csproj" />
     <ProjectReference Include="..\Anatomy.Main\Anatomy.Main.csproj" />
     <ProjectReference Include="..\Anatomy.Support\Anatomy.Support.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="VickySwitch">
+      <HintPath>..\..\..\..\repos\practice\TestApp\VickySwitch\bin\Debug\net7.0-windows\VickySwitch.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

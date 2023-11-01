@@ -13,7 +13,7 @@
     <SolidColorBrush x:Key="BaseCheckBoxColor" Color="#0a585d"/>
     <SolidColorBrush x:Key="BaseTextBoxColor" Color="#151515"/>
     <SolidColorBrush x:Key="TextBoxBorderBrush" Color="#0b666c"/>
-    <SolidColorBrush x:Key="BaseunderlineBrush" Color="#330c9ca5"/>
+    <SolidColorBrush x:Key="BaseUnderlineBrush" Color="#330c9ca5"/>
     <SolidColorBrush x:Key="BaseThemeSwitchBrush" Color="#151515"/>
     <SolidColorBrush x:Key="BaseBackground" Color="#1f1f1f"/>
     <SolidColorBrush x:Key="FontColor" Color="#FFFFFF"/>
@@ -24,7 +24,7 @@
     <Style TargetType="{x:Type james:DarkThemeWindow}" 
            BasedOn="{StaticResource {x:Type james:DarkThemeWindow}}">
         <Setter Property="Foreground" Value="{DynamicResource FontColor}"/>
-        <Setter Property="TitleBarColor" Value="{DynamicResource BaseBackground}"/>
+        <Setter Property="TitleHeaderBackground" Value="{DynamicResource BaseBackground}"/>
         <Setter Property="Background" Value="{DynamicResource BaseBackground}"/>
     </Style>
 

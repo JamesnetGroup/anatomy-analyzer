@@ -2,8 +2,10 @@
 using System.Windows.Media;
 using System.Windows.Controls.Primitives;
 using System.Windows.Controls;
+using XamlDesign.Wpf.UI.Units;
+using Jamesnet.Wpf.Controls;
 
-namespace DemoApp.Extensions
+namespace Anatomy.Extensions
 {
     public enum Theme
     {
@@ -83,6 +85,19 @@ namespace DemoApp.Extensions
             return listBox;
         }
 
+        public static UnderlineMenuBox InitSampleData(this UnderlineMenuBox listBox, Theme theme)
+        {
+            UnderlineMenuBoxItem item1 = new() { Content = "Microsoft", Icon = IconType.Microsoft };
+            UnderlineMenuBoxItem item2 = new() { Content = "Apple", Icon = IconType.Apple };
+            UnderlineMenuBoxItem item3 = new() { Content = "Netflix", Icon = IconType.Netflix };
+            listBox.Items.Add(item1);
+            listBox.Items.Add(item2);
+            listBox.Items.Add(item3);
+            listBox.SelectedIndex = 0;
+            ApplyTheme(listBox, theme);
+            return listBox;
+        }
+
         public static Expander InitSampleData(this Expander expander, Theme theme)
         {
             expander.Header = "Sample Expander Header";
@@ -113,16 +128,19 @@ namespace DemoApp.Extensions
             var tabItem1 = new TabItem
             {
                 Header = "Tab 1",
-                Content = "Content of Tab 1"
+                Content = "Content of Tab 1",
+                Padding = new Thickness(10),
             };
             var tabItem2 = new TabItem
             {
                 Header = "Tab 2",
-                Content = "Content of Tab 2"
+                Content = "Content of Tab 2",
+                Padding = new Thickness(10)
             };
 
             tabControl.Items.Add(tabItem1);
             tabControl.Items.Add(tabItem2);
+            tabControl.Padding = new(10);
             ApplyTheme(tabControl, theme);
             return tabControl;
         }
