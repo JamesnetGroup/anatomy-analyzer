@@ -14,10 +14,12 @@
     <Style TargetType="{x:Type Border}" x:Key="Border">
         <Setter Property="BorderThickness" Value="0.51"/>
         <Setter Property="BorderBrush" Value="#000000"/>
-        <Setter Property="Margin" Value="5 10 5 10"/>
+        <Setter Property="Margin" Value="0 10 0 10"/>
     </Style>
     
     <Style TargetType="{x:Type views:MainContent}">
+        <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type views:MainContent}">
@@ -28,7 +30,7 @@
                             <xamls:UnderlineMenuBoxItem Content="Languages" Icon="Cog"/>
                         </xamls:UnderlineMenuBox>
                         
-                        <james:JamesGrid Rows="*" Columns="Auto, Auto, *7, *3" Margin="5 0 5 0"
+                        <james:JamesGrid Rows="*" Columns="Auto, Auto, *7, *3" Margin="0 0 0 0"
                                          Visibility="{Binding ElementName=menu, Path=SelectedMenuItem, Converter={cnvts:EqualityToVisibilityConverter}, ConverterParameter=Analyzer}">
 
                             <Border Style="{StaticResource Border}">

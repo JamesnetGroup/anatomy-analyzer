@@ -2,6 +2,7 @@
 using Anatomy.Forms.UI.Views;
 using Anatomy.Support.Local.Helpers;
 using Anatomy.Support.Local.Models;
+using DemoApp.Support.UI.Units;
 using Jamesnet.Wpf.Controls;
 using System.Reflection;
 using System.Windows;
@@ -47,6 +48,7 @@ namespace Anatomy
             items.Add(new IconCheckBox().InitSampleData(Theme.Black));
             items.Add(new ToggleSwitch().InitSampleData(Theme.Black));
             items.Add(new UnderlineMenuBox().InitSampleData(Theme.Black));
+            items.Add(new PlayButton());
         }
     }
 }

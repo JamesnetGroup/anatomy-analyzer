@@ -5,19 +5,23 @@ VisualStudioVersion = 17.8.34112.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Studio", "Studio", "{1470AD95-B8DB-434B-B98D-483B2304C83A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anatomy", "Anatomy\Anatomy.csproj", "{272820C4-FDFC-4057-BCE9-91EC35DB0888}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anatomy", "Anatomy\Anatomy.csproj", "{272820C4-FDFC-4057-BCE9-91EC35DB0888}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anatomy.Forms", "Anatomy.Forms\Anatomy.Forms.csproj", "{FA1B31B8-FA6D-4C11-9A34-65A4661E4D86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anatomy.Forms", "Anatomy.Forms\Anatomy.Forms.csproj", "{FA1B31B8-FA6D-4C11-9A34-65A4661E4D86}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Partial", "Partial", "{842126FA-D649-4BB3-BE8A-35A63C8364A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anatomy.Main", "Anatomy.Main\Anatomy.Main.csproj", "{68043126-0E4E-4E98-AF0B-5875CE15DA86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anatomy.Main", "Anatomy.Main\Anatomy.Main.csproj", "{68043126-0E4E-4E98-AF0B-5875CE15DA86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anatomy.Support", "Anatomy.Support\Anatomy.Support.csproj", "{A77B1139-EB2C-44A8-B844-91802AB7D001}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anatomy.Support", "Anatomy.Support\Anatomy.Support.csproj", "{A77B1139-EB2C-44A8-B844-91802AB7D001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anatomy.Analysis", "Anatomy.Analysis\Anatomy.Analysis.csproj", "{595622D2-C015-482C-8CFC-10B4F34C6AFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anatomy.Analysis", "Anatomy.Analysis\Anatomy.Analysis.csproj", "{595622D2-C015-482C-8CFC-10B4F34C6AFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Based", "Based", "{6A7D696A-B376-4A69-8E7A-60ADE046A72E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnatomyBuilder", "AnatomyBuilder\AnatomyBuilder.csproj", "{B232306F-FBDC-4086-82A6-F9B5E6F64D8B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp.Support", "DemoApp.Support\DemoApp.Support.csproj", "{15083873-D57F-4191-A6EA-D3A9CC0B072D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{595622D2-C015-482C-8CFC-10B4F34C6AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{595622D2-C015-482C-8CFC-10B4F34C6AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{595622D2-C015-482C-8CFC-10B4F34C6AFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B232306F-FBDC-4086-82A6-F9B5E6F64D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B232306F-FBDC-4086-82A6-F9B5E6F64D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B232306F-FBDC-4086-82A6-F9B5E6F64D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B232306F-FBDC-4086-82A6-F9B5E6F64D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15083873-D57F-4191-A6EA-D3A9CC0B072D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15083873-D57F-4191-A6EA-D3A9CC0B072D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15083873-D57F-4191-A6EA-D3A9CC0B072D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15083873-D57F-4191-A6EA-D3A9CC0B072D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +67,8 @@ Global
 		{68043126-0E4E-4E98-AF0B-5875CE15DA86} = {842126FA-D649-4BB3-BE8A-35A63C8364A1}
 		{A77B1139-EB2C-44A8-B844-91802AB7D001} = {6A7D696A-B376-4A69-8E7A-60ADE046A72E}
 		{595622D2-C015-482C-8CFC-10B4F34C6AFE} = {842126FA-D649-4BB3-BE8A-35A63C8364A1}
+		{B232306F-FBDC-4086-82A6-F9B5E6F64D8B} = {1470AD95-B8DB-434B-B98D-483B2304C83A}
+		{15083873-D57F-4191-A6EA-D3A9CC0B072D} = {1470AD95-B8DB-434B-B98D-483B2304C83A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C8CD077F-4042-46C6-BDDB-EEBA476C1580}

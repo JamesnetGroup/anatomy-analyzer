@@ -28,6 +28,7 @@
     <ProjectReference Include="..\Anatomy.Forms\Anatomy.Forms.csproj" />
     <ProjectReference Include="..\Anatomy.Main\Anatomy.Main.csproj" />
     <ProjectReference Include="..\Anatomy.Support\Anatomy.Support.csproj" />
+    <ProjectReference Include="..\DemoApp.Support\DemoApp.Support.csproj" />
   </ItemGroup>
 
   <ItemGroup>
