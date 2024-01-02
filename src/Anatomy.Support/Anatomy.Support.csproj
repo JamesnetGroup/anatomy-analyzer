@@ -8,9 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.108" />
+    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.110" />
     <PackageReference Include="ThemeSwitch" Version="1.0.0.8" />
     <PackageReference Include="XamlDesign.Wpf" Version="1.0.0.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NavigationBar">
+      <HintPath>..\..\Dlls\NavigationBar.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
